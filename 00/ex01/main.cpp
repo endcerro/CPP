@@ -1,17 +1,36 @@
 #include <iostream>
 #include <string>
-
-int main(int argc, char const *argv[])
+#include "book.hpp"
+void add()
 {
-	std::string s;
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";		
-	for (int i = 1; i < argc; i++)
+
+}
+
+void search()
+{
+
+}
+
+int main()
+{
+	std::string command = "";
+	
+	int status = 1;
+	while (command != "EXIT")
 	{
-		s = argv[i];
-		for ( std::string::iterator it=s.begin(); it != s.end(); ++it)
-    		std::cout << (char)((*it >= 'a' && *it <= 'z') ? *it - 32 : *it);
+		std::cout << "phonebook> ";
+		std::getline(std::cin, command);
+		if (!std::cin.good())
+			exit(0);
+		if (command == "ADD")
+			add();
+		else if (command == "SEARCH")
+			search();
+		else if (command == "EXIT")
+			status = 0;
+		else
+			std::cout << "Sorry I didn't get that";
 	}
-	std::cout << '\n';
+	
 	return 0;
 }
