@@ -6,74 +6,75 @@
 /*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 14:44:06 by edal              #+#    #+#             */
-/*   Updated: 2020/11/14 18:52:43 by edal             ###   ########.fr       */
+/*   Updated: 2020/11/14 20:12:38 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "book.hpp"
 
-Book::Book(void) 
-{
-	// for(int i = 0; i < STORAGE; i++)
-	// {
-	// 	this->db[i] = NULL;
-	// }
-}
+Book::Book(void) {}
 Book::~Book(void) {}
 
 void Book::AddContact(Contact c)
 {
-	if (this->ammount < STORAGE)
-		this->db[this->ammount++] = c;
+	int index;
+	std::string cache;
+	if (this->_ammount == STORAGE)
+	{
+		std::cout << "Storage is full, choose which entry to delete (-1 to cancel)\n";
+		this->List();
+		std::getline(std::cin, cache);
+		try
+		{
+			index = std::stoi(cache, NULL);
+		}
+		catch(std::exception &e)
+		{
+			std::cout << "That's not a number" << std::endl;
+			index = -1;
+		}
+		if (index > 0 && index < this->_ammount)
+			this->_db[index] = c;
+	}
 	else
-		std::cout << "Too much shit";
+		this->_db[this->_ammount++] = c;
 }
 
-void Book::PrintBook(void) const
+void Book::PrintContact(int index) const
 {
-	for(int i = 0; i < this->ammount; i++)
-		this->db[i].Print();
+	this->_db[index].Print();
 }
 
-
-std::string trunc(std::string s)
-{
-	std::string n = s;
-	if (s.length() > 10)
-		n.replace(10, std::string::npos, ".");
-	return (n);
-}
-
-void Book::List(void) const
+int Book::List(void) const
 {
 	std::string s;
-	const int len = 10;
-	
 	for(int i = 0; i < 4; i++)
 	{
 		std::cout << "|";
-		s = this->db[0].GetLabel(i);
-		if (s.length() > len)
-			s.replace(len - 1, std::string::npos, ".");
+		s = this->_db[0].GetLabel(i);
+		if (s.length() > DISPLAY)
+			s.replace(DISPLAY - 1, std::string::npos, ".");
 		std::cout << s;
-		for(int j = s.length(); j < len; j++)
+		for(int j = s.length(); j < DISPLAY; j++)
 			std::cout << " ";
 	}
 	std::cout << "|" << std::endl;
 	for(int i = 0; i< 45; i++)
 		std::cout << "-";
 	std::cout << std::endl;
-	for (int j = 0; j < ammount; j++)
+	int j = -1;
+	while (++j < this->_ammount)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			s = this->db[j].GetField(i);
-			if (s.length() > len)
-				s.replace(len - 1, std::string::npos, ".");
+			s = this->_db[j].GetField(i);
+			if (s.length() > DISPLAY)
+				s.replace(DISPLAY - 1, std::string::npos, ".");
 			std::cout << "|" << s;
-			for(int n = s.length(); n < len; n++)
+			for(int n = s.length(); n < DISPLAY; n++)
 				std::cout << " ";	
 		}
-		std::cout << "|" << std::endl;
+		std::cout << "|" << j << std::endl;
 	}
-	// std::cout << "|" << std::endl;
+	std::cin.clear();
+	return (j);
 }

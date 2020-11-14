@@ -12,6 +12,7 @@ class Contact
 	public:
 		
 		Contact(void);
+		Contact(std::string a,std::string b,std::string c,std::string d);
 		~Contact(void);
 		void Print(void) const;
 		void Setup(void);

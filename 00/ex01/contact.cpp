@@ -6,7 +6,7 @@
 /*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 16:28:58 by edal              #+#    #+#             */
-/*   Updated: 2020/11/14 17:31:55 by edal             ###   ########.fr       */
+/*   Updated: 2020/11/14 19:37:15 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "contact.hpp"
@@ -23,10 +23,18 @@ std::string Contact::_labels[FIELDS_NB] =
 	"birthday date", 
 	"favortie meal", 
 	"underwear color", 
-	"darkerst secret"
+	"darkest secret"
 };
 
+Contact::~Contact(void){}
 Contact::Contact(void){}
+Contact::Contact(std::string a,std::string b,std::string c,std::string d)
+{
+	this->_fields[0] = a;
+	this->_fields[1] = b;
+	this->_fields[2] = c;
+	this->_fields[3] = d;
+}
 
 void Contact::Setup(void)
 {
@@ -52,7 +60,6 @@ void Contact::Print(void) const
 	for(int i = 0; i < FIELDS_NB; i++)
 	{
 		std::cout << this->_labels[i] << " : ";
-		std::cout << this->_fields[i] << "\n";
+		std::cout << this->_fields[i] << std::endl;
 	}
 }
-Contact::~Contact(void){}
