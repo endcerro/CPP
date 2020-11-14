@@ -1,21 +1,30 @@
 #include <iostream>
 #include <string>
 #include "book.hpp"
-void add()
+#include "contact.hpp"
+Book add(Book b)
 {
-
+	std::cout << "Creating new contact : \n";
+	Contact c;
+	c.Setup();
+	b.AddContact(c);
+	return (b);
 }
 
-void search()
+void search(Book b)
 {
-
+	b.List();
 }
+
+
+
 
 int main()
 {
+
 	std::string command = "";
 	
-	int status = 1;
+	Book b;
 	while (command != "EXIT")
 	{
 		std::cout << "phonebook> ";
@@ -23,14 +32,12 @@ int main()
 		if (!std::cin.good())
 			exit(0);
 		if (command == "ADD")
-			add();
+			b = add(b);
 		else if (command == "SEARCH")
-			search();
-		else if (command == "EXIT")
-			status = 0;
-		else
-			std::cout << "Sorry I didn't get that";
+			search(b);
 	}
+
+	b.PrintBook();
 	
 	return 0;
 }
