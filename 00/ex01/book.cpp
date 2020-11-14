@@ -6,7 +6,7 @@
 /*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 14:44:06 by edal              #+#    #+#             */
-/*   Updated: 2020/11/14 20:12:38 by edal             ###   ########.fr       */
+/*   Updated: 2020/11/14 20:24:56 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "book.hpp"
@@ -32,8 +32,10 @@ void Book::AddContact(Contact c)
 			std::cout << "That's not a number" << std::endl;
 			index = -1;
 		}
-		if (index > 0 && index < this->_ammount)
+		if (index >= 0 && index < this->_ammount)
 			this->_db[index] = c;
+		else
+			std::cout << "Replacement canceled";
 	}
 	else
 		this->_db[this->_ammount++] = c;
@@ -47,7 +49,16 @@ void Book::PrintContact(int index) const
 int Book::List(void) const
 {
 	std::string s;
-	for(int i = 0; i < 4; i++)
+
+	std::cout << "|";
+	s = "index";
+	if (s.length() > DISPLAY)
+	s.replace(DISPLAY - 1, std::string::npos, ".");
+	std::cout << s;
+	for(int j = s.length(); j < DISPLAY; j++)
+		std::cout << " ";
+	
+	for(int i = 0; i < 3; i++)
 	{
 		std::cout << "|";
 		s = this->_db[0].GetLabel(i);
@@ -58,13 +69,16 @@ int Book::List(void) const
 			std::cout << " ";
 	}
 	std::cout << "|" << std::endl;
-	for(int i = 0; i< 45; i++)
+	for(int i = 0; i < 45; i++)
 		std::cout << "-";
 	std::cout << std::endl;
 	int j = -1;
 	while (++j < this->_ammount)
 	{
-		for (int i = 0; i < 4; i++)
+		std::cout << "|" << j;
+		for(int n = 1; n < DISPLAY; n++)
+			std::cout << " ";
+		for (int i = 0; i < 3; i++)
 		{
 			s = this->_db[j].GetField(i);
 			if (s.length() > DISPLAY)
@@ -73,7 +87,7 @@ int Book::List(void) const
 			for(int n = s.length(); n < DISPLAY; n++)
 				std::cout << " ";	
 		}
-		std::cout << "|" << j << std::endl;
+		std::cout << "|" << std::endl;
 	}
 	std::cin.clear();
 	return (j);
