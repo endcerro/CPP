@@ -29,10 +29,10 @@ test : all
 	./megaphone
 
 clean : 
-	rm -rf megaphone
+	rm -rf $(NAME)
 
 fclean : clean
-	rm -rf objs
+	rm -rf $(OBJD)
 
 re : fclean all
 
