@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/15 18:12:26 by edal              #+#    #+#             */
-/*   Updated: 2020/11/15 19:05:36 by edal             ###   ########.fr       */
+/*   Created: 2020/11/15 19:17:50 by edal              #+#    #+#             */
+/*   Updated: 2020/11/15 19:18:06 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Pony.hpp"
-Pony::Pony(std::string n, unsigned int r, unsigned int g, unsigned int b) :_name(n), _r(r), _g(g), _b(b){}
+#include "Zombie.hpp"
 
-Pony::~Pony(){}
+Zombie::Zombie(std::string n) : _name(n), _type("default"){}
+Zombie::Zombie(std::string n, std::string t) : _name(n), _type(t){}
+Zombie::Zombie(void){}
+Zombie::~Zombie(void){}
 
-void Pony::present(void) const
+void Zombie::announce(void) const
 {
-	std::cout << "Name is : " << this->_name << std::endl;
-	std::cout << "Color is" <<std::endl << "R : " << this->_r << std::endl;
-	std::cout << "G : " << this->_g << std::endl;
-	std::cout << "B : " << this->_b << std::endl;
+	std::cout <<"<"<< this->_name << " (" <<this->_type<< ")> Braiiiiiiinnnssss..."<<std::endl;
+}
+
+void Zombie::setType(std::string s)
+{
+	this->_type = s;
 }

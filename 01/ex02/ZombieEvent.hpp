@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/15 18:12:26 by edal              #+#    #+#             */
-/*   Updated: 2020/11/15 19:05:36 by edal             ###   ########.fr       */
+/*   Created: 2020/11/15 19:08:53 by edal              #+#    #+#             */
+/*   Updated: 2020/11/15 19:28:35 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Pony.hpp"
-Pony::Pony(std::string n, unsigned int r, unsigned int g, unsigned int b) :_name(n), _r(r), _g(g), _b(b){}
+#ifndef ZOMBIEEVENT_H
+#define ZOMBIEEVENT_H value
+	
+#include "Zombie.hpp"
+#include <cstdlib> 
+#include <ctime>
 
-Pony::~Pony(){}
-
-void Pony::present(void) const
+class ZombieEvent
 {
-	std::cout << "Name is : " << this->_name << std::endl;
-	std::cout << "Color is" <<std::endl << "R : " << this->_r << std::endl;
-	std::cout << "G : " << this->_g << std::endl;
-	std::cout << "B : " << this->_b << std::endl;
-}
+	public:
+		ZombieEvent(void);
+		~ZombieEvent(void);
+		Zombie* newZombie(std::string name) const;
+		void setZombieType(std::string name);
+		void randomChump(void) const;
+	private:
+		std::string _ZombieType;
+		static std::string _names[5];
+};
+
+#endif
