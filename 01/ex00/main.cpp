@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/15 17:40:07 by edal              #+#    #+#             */
-/*   Updated: 2020/11/15 17:52:37 by edal             ###   ########.fr       */
+/*   Created: 2020/11/15 18:12:26 by edal              #+#    #+#             */
+/*   Updated: 2020/11/15 18:32:17 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <iostream>
-#include <string>
+#include "Pony.hpp"
 
-int main(int argc, char const *argv[])
+Pony *PonyOnTheHeap(void)
 {
-	std::string s;
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";		
-	for (int i = 1; i < argc; i++)
-	{
-		s = argv[i];
-		for ( std::string::iterator it=s.begin(); it != s.end(); ++it)
-    		std::cout << (char)((*it >= 'a' && *it <= 'z') ? *it - 32 : *it);
-	}
-	std::cout << '\n';
+	Pony *alloc = new Pony("John", 255,255,255);
+	return alloc;
+}
+
+Pony PonyOnTheStack(void)
+{
+	Pony stack =Pony("Johanna", 0,0,0);
+	return stack;
+}
+
+int main()
+{
+	Pony stack = PonyOnTheStack();
+	Pony *heap = PonyOnTheHeap();
+
+	stack.present();
+	heap->present();
+	
+	delete heap;
 	return (0);
 }

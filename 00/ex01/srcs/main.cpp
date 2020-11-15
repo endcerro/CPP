@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/15 17:45:46 by edal              #+#    #+#             */
+/*   Updated: 2020/11/15 18:11:38 by edal             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <string>
 #include <exception>
 #include "book.hpp"
 #include "contact.hpp"
+
 Book add(Book b)
 {
 	std::cout << "Creating new contact : \n";
