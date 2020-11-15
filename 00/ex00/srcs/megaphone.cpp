@@ -13,5 +13,5 @@ int main(int argc, char const *argv[])
     		std::cout << (char)((*it >= 'a' && *it <= 'z') ? *it - 32 : *it);
 	}
 	std::cout << '\n';
-	return 0;
+	return (0);
 }
