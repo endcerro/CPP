@@ -1,5 +1,5 @@
 #ifndef ZOMBIEHORDE_H
-#define ZOMBIEHORDE_H value
+#define ZOMBIEHORDE_H
 
 #include "Zombie.hpp"
 

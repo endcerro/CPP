@@ -4,7 +4,7 @@ Human::Human() {}
 
 Human::~Human() {}
 
-std::string Human::identify(void) const
+const std::string Human::identify(void) const
 {
 	return this->_brain.identify();
 }

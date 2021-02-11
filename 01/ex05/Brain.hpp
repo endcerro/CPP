@@ -1,5 +1,5 @@
-#ifndef BAIN_H
-#define BAIN_H
+#ifndef BRAIN_H
+#define BRAIN_H
 #include <string>
 #include <sstream> //for std::stringstream 
 
