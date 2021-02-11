@@ -2,4 +2,5 @@ megaphone
 phonebook
 *objs*
 *.o
-*a.out
+*.out
+*.gch
