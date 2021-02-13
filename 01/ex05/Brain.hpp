@@ -6,16 +6,15 @@
 class Brain {
 
 public:
-	Brain();
-	Brain(int iq, int eq);
+	Brain(int iq = 0, int eq = 0);
 	~Brain();
 	std::string identify(void) const;
 	int getIq(void) const;
 	int getEq(void) const;
 
 private	 :
-	int _iq = 0;
-	int _eq = 0;
+	int _iq;
+	int _eq;
 };
 
 #endif

@@ -1,6 +1,5 @@
 #include "Brain.hpp"
 
-Brain::Brain() {}
 Brain::Brain(int iq, int eq) : _iq(iq), _eq(eq) {}
 Brain::~Brain() {}
 
