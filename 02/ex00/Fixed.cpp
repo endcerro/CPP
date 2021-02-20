@@ -17,6 +17,11 @@ int Fixed::getRawBits() const
 	std::cout << "getRawBits called" << std::endl;	
 	return this->_fpv;
 }
+void Fixed::setRawBits(int raw)
+{
+	std::cout << "setRawBits called" << std::endl;	
+	this->_fpv = raw;
+}
 Fixed& Fixed::operator= (const Fixed &f)
 {
 	std::cout << "assignation operator called" << std::endl;

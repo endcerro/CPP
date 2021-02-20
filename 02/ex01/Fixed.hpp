@@ -1,13 +1,15 @@
 #ifndef FIXED_H
 #define FIXED_H value
 #include <iostream>
+#include <math.h>
 class Fixed
 {
 	public : 
 
 		~Fixed();
-		Fixed(int fpv = 0);
-		Fixed(float fpv);
+		Fixed();
+		Fixed(int rval);
+		Fixed(float rval);
 		Fixed(const Fixed &f);
 		Fixed& operator= (const Fixed &f);
 		void setRawBits(int raw);
@@ -17,8 +19,8 @@ class Fixed
 		
 
 	private :
-		int _fpv;					//Number storage Fixed Point Value
-		static const int _fbn = 8;	//Last 8 bits are floating part
+		int _rval;					//Number storage Fixed Point Value
+		static const int _nfb = 8;	//Last 8 bits are floating part
 };
-// std::string operator<< (std::ostream& os, const Fixed &f);
+std::ostream& operator<< (std::ostream& os, const Fixed &f);
 #endif
