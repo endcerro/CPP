@@ -5,14 +5,20 @@ class Fixed
 {
 	public : 
 
-		Fixed(int fpv = 0);
-		Fixed(const Fixed &f);
 		~Fixed();
-		int getRawBits() const;
+		Fixed(int fpv = 0);
+		Fixed(float fpv);
+		Fixed(const Fixed &f);
 		Fixed& operator= (const Fixed &f);
-	private :
-		int _fpv;					//Number storage
-		static const int _fbn = 8;	//Last 8 bits are floating part 
-};
+		void setRawBits(int raw);
+		int toInt() const;
+		float toFloat() const;
+		int getRawBits() const;
+		
 
+	private :
+		int _fpv;					//Number storage Fixed Point Value
+		static const int _fbn = 8;	//Last 8 bits are floating part
+};
+// std::string operator<< (std::ostream& os, const Fixed &f);
 #endif
