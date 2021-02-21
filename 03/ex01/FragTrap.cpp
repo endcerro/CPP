@@ -4,12 +4,12 @@ FragTrap::FragTrap(std::string name) :
  _name(name), _hp(100), _max_hp(100), _ep(100), _max_ep(100),
   _lvl(1), _cqc_d(30), _rng_d(20), _armr(5)
 {
-	std::cout << _name << " has entered the game" << std::endl;
+	std::cout << "FragTrap " <<_name << " has entered the game" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << _name << " left the game" << std::endl;
+	std::cout << "FragTrap "<< _name << " left the game" << std::endl;
 }
 
 void FragTrap::rangedAttack(std::string const & target) const
