@@ -1,6 +1,6 @@
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
+SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name) //TODO
 {
 	// _hp = _max_hp = 60;
 	// _ep = _max_ep = 120;
@@ -10,7 +10,7 @@ SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
 	// std::cout << "superTrap " <<_name << " has entered the game" << std::endl;
 }
 
-SuperTrap::~SuperTrap()
+SuperTrap::~SuperTrap() //TODO
 {
 	std::cout << "superTrap "<< _name << " left the game" << std::endl;
 }
