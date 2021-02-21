@@ -65,7 +65,40 @@ Fixed& Fixed::operator= (const Fixed &f) //Might not work
 	_rval = f.getRawBits();
 	return *this;
 }
+int Fixed::operator> (const Fixed &f2)
+{
+	return (this->getRawBits() > f2.getRawBits());
+}
+int Fixed::operator< (const Fixed &f2)
+{
+	return (this->getRawBits() < f2.getRawBits());
+}
+int Fixed::operator>= (const Fixed &f2)
+{
+	return (this->getRawBits() >= f2.getRawBits());
+}
+int Fixed::operator<= (const Fixed &f2)
+{
+	return (this->getRawBits() <= f2.getRawBits());
+}
+int Fixed::operator== (const Fixed &f2)
+{
+	return (this->getRawBits() == f2.getRawBits());
+}
+int Fixed::operator!= (const Fixed &f2)
+{
+	return (this->getRawBits() != f2.getRawBits());
+}
 
+int Fixed::operator+ (const Fixed &f2)
+{
+	return (this->getRawBits() + f2.getRawBits());
+}
+
+int Fixed::operator- (const Fixed &f2)
+{
+	return (this->getRawBits() - f2.getRawBits());
+}
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
 	os << fixed.toFloat();
