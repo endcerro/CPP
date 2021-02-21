@@ -4,23 +4,23 @@ ClapTrap::ClapTrap(std::string name) :
  _name(name), _hp(100), _max_hp(100), _ep(100), _max_ep(100),
   _lvl(1), _cqc_d(30), _rng_d(20), _armr(5)
 {
-	std::cout << "ClapTrap " <<_name << " has entered the game" << std::endl;
+	std::cout << "CL4P-TP " <<_name << " has entered the game" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap "<< _name << " left the game" << std::endl;
+	std::cout << "CL4P-TP "<< _name << " left the game" << std::endl;
 }
 
 void ClapTrap::rangedAttack(std::string const & target) const
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
+	std::cout << "CL4P-TP " << _name << " attacks " << target;
 	std::cout << "at range, causing " << _rng_d << " points of damage!" << std::endl;
 }
 
 void ClapTrap::meleeAttack(std::string const & target) const
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
+	std::cout << "CL4P-TP " << _name << " attacks " << target;
 	std::cout << " directly, causing " << _cqc_d << " points of damage!" << std::endl;
 }
 

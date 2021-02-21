@@ -7,12 +7,24 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 	_cqc_d = 60;
 	_rng_d = 5;
 	_armr = 0;
-	std::cout << "NinjaTrap " <<_name << " has entered the game" << std::endl;
+	std::cout << "N1NJ-TRP " <<_name << " has entered the game" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
 {
-	std::cout << "NinjaTrap "<< _name << " left the game" << std::endl;
+	std::cout << "N1NJ-TRP "<< _name << " left the game" << std::endl;
+}
+
+void NinjaTrap::rangedAttack(std::string const & target) const
+{
+	std::cout << "N1NJ-TRP " << _name << " attacks " << target;
+	std::cout << "at range, causing " << _rng_d << " points of damage!" << std::endl;
+}
+
+void NinjaTrap::meleeAttack(std::string const & target) const
+{
+	std::cout << "N1NJ-TRP " << _name << " attacks " << target;
+	std::cout << " directly, causing " << _cqc_d << " points of damage!" << std::endl;
 }
 
 void NinjaTrap::ninjaShoeBox(ClapTrap c) const

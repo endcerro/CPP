@@ -5,7 +5,7 @@
 class ClapTrap
 {
 	public:	
-		ClapTrap(std::string name = "");
+		ClapTrap(std::string name = "NULL");
 		~ClapTrap();
 		void rangedAttack(std::string const & target) const;
 		void meleeAttack(std::string const & target) const;

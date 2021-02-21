@@ -4,10 +4,12 @@
 
 int main()
 {
-	FragTrap f1("R4");
-	f1.vaulthunter_dot_exe("John");
-	ScavTrap s1("R3");
-	s1.challengeNewcomer();
-	SuperTrap chad("X1");
+	// FragTrap f1("F");
+	// f1.vaulthunter_dot_exe("John");
+	// ScavTrap s1("S");
+	// s1.challengeNewcomer();
+	SuperTrap chad("X");
+	chad.meleeAttack("doge");
+	chad.rangedAttack("cheems");
 	return 0;
 }
