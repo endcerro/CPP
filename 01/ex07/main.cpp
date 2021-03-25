@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 15:44:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/02/13 17:08:16 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/25 17:01:00 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
@@ -50,8 +50,14 @@ int main(int argc, char const *argv[])
 		return (1);
 	}
 	output.open(toUpper(argv[1]) + ".replace");
-	while (getline(input, line)) //Maybe avoid getting more \n than needed
-		output << swap(line, argv[2], argv[3]) << std::endl;
+	int i = 0;
+	while (getline(input, line))
+	{ //Maybe avoid getting more \n than needed
+		if (i++)
+			output << std::endl;
+		if (line[0] != 0)
+			output << swap(line, argv[2], argv[3]);// << std::endl;
+	}
 	input.close();
 	output.close();
 	return (0);

@@ -6,9 +6,10 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 19:17:50 by edal              #+#    #+#             */
-/*   Updated: 2021/02/13 17:07:56 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:52:59 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 Zombie::Zombie(std::string n) : _name(n), _type("default"){}

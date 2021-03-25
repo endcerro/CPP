@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 17:19:44 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/02/13 17:08:08 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:55:12 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class HumanA
 		HumanA(const std::string name, const Weapon &weapon);
 		void attack() const;
 	private :
-		std::string _name;
+		const std::string _name;
 		const Weapon &_weapon;
 };
 #endif

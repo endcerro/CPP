@@ -6,13 +6,16 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 18:12:26 by edal              #+#    #+#             */
-/*   Updated: 2021/02/13 17:07:44 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:53:48 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pony.hpp"
 Pony::Pony(std::string n, unsigned int r, unsigned int g, unsigned int b) :_name(n), _r(r), _g(g), _b(b){}
 
-Pony::~Pony(){}
+Pony::~Pony()
+{
+	std::cout << "Pony " << this->_name << " has been deleted" << std::endl;
+}
 
 void Pony::present(void) const
 {
