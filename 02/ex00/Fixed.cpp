@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/25 17:16:34 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/03/25 17:16:40 by edal--ce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(int fpv) : _fpv(fpv)
@@ -24,7 +36,7 @@ void Fixed::setRawBits(int raw)
 }
 Fixed& Fixed::operator= (const Fixed &f)
 {
-	std::cout << "assignation operator called" << std::endl;
+	std::cout << "Assignation operator called" << std::endl;
 	_fpv = f.getRawBits();
 	return *this;
 }
