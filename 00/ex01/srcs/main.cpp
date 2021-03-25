@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 17:45:46 by edal              #+#    #+#             */
-/*   Updated: 2021/02/13 17:07:39 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:36:20 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,24 +56,24 @@ void search(Book b)
 Book fill()
 {
 	Book b;
-	Contact enzo0("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
-	Contact enzo1("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
-	Contact enzo2("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
-	Contact enzo3("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
-	Contact enzo4("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
-	Contact test("This is way too long", "This is way too long", "This is way too long", "This is way too long");
-	b.AddContact(enzo0);
-	b.AddContact(enzo1);
-	b.AddContact(enzo2);
-	b.AddContact(enzo3);
-	b.AddContact(enzo4);
-	b.AddContact(test);
+	// Contact enzo0("Enzo", "Dal Cerro", "x1", "edal--ce");
+	// Contact enzo1("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
+	// Contact enzo2("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
+	// Contact enzo3("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
+	// Contact enzo4("Enzo", "Dal Cerro", "CRACKHEAD", "edal--ce");
+	// Contact test("This is way too long", "This is way too long", "This is way too long", "This is way too long");
+	// b.AddContact(enzo0);
+	// b.AddContact(enzo1);
+	// b.AddContact(enzo2);
+	// b.AddContact(enzo3);
+	// b.AddContact(enzo4);
+	// b.AddContact(test);
 	return b;
 }
 
 int main()
 {
-	Book b = fill();
+	Book b; //= fill();
 	std::string command;
 	// std::cout << "phonebook1>";
 	// std::getline(std::cin, command);
@@ -87,7 +87,6 @@ int main()
 			b = add(b);
 		else if (command == "SEARCH")
 			search(b);
-		
 		// std::cout<< std::endl;
 	}	
 	return 0;

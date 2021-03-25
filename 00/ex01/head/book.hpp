@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   book.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 17:45:54 by edal              #+#    #+#             */
-/*   Updated: 2020/11/15 17:53:00 by edal             ###   ########.fr       */
+/*   Updated: 2021/03/25 15:31:58 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PHONEBOOK_H
@@ -30,7 +30,7 @@ class Book
 		void PrintContact(int index) const;
 
 	private:
-		int _ammount = 0;
+		int _ammount;
 		Contact _db[STORAGE];
 };
 

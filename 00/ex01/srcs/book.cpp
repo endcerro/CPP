@@ -6,12 +6,12 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 14:44:06 by edal              #+#    #+#             */
-/*   Updated: 2021/02/13 17:07:35 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:31:55 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "book.hpp"
 
-Book::Book(void) {}
+Book::Book(void) : _ammount(0) {}
 Book::~Book(void) {}
 
 void Book::AddContact(Contact c)
