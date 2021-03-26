@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 15:53:10 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/03/26 15:56:14 by edal--ce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name) :
- _name(name), _hp(100), _max_hp(100)/*, _ep(100)*/, _max_ep(100),
+ _name(name), _hp(100), _max_hp(100) , _ep(100), _max_ep(100),
   _lvl(1), _cqc_d(30), _rng_d(20), _armr(5)
 {
 	std::cout << "ClapTrap " <<_name << " has entered the game" << std::endl;
