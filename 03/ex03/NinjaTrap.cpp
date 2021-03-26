@@ -15,19 +15,19 @@ NinjaTrap::~NinjaTrap()
 	std::cout << "NinjaTrap "<< _name << " left the game" << std::endl;
 }
 
-void NinjaTrap::ninjaShoeBox(ClapTrap c) const
+void NinjaTrap::ninjaShoeBox(ClapTrap &c) const
 {
 	std::cout << "target locked, ClapTrap" << std::endl;
 }
-void NinjaTrap::ninjaShoeBox(ScavTrap s) const
+void NinjaTrap::ninjaShoeBox(ScavTrap &s) const
 {
 	std::cout << "target locked, ScavTrap" << std::endl;
 }
-void NinjaTrap::ninjaShoeBox(FragTrap f) const
+void NinjaTrap::ninjaShoeBox(FragTrap &f) const
 {
 	std::cout << "target locked, FragTrap" << std::endl;
 }
-void NinjaTrap::ninjaShoeBox(NinjaTrap n) const
+void NinjaTrap::ninjaShoeBox(NinjaTrap &n) const
 {
 	std::cout << "target locked, NinjaTrap" << std::endl;
 }

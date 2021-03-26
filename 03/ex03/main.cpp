@@ -1,12 +1,13 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-
+#include "NinjaTrap.hpp"
 
 int main()
 {
-	FragTrap f1("R4");
-	f1.vaulthunter_dot_exe("John");
-	ScavTrap s1("R3");
-	s1.challengeNewcomer();
+	NinjaTrap yas("Yasuo");
+	FragTrap f("frag");
+	ClapTrap c("clap");
+	yas.ninjaShoeBox(f);
+	yas.ninjaShoeBox(c);
 	return 0;
 }
