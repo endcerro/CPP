@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/21 13:35:44 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/03/26 15:45:01 by edal--ce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(std::string name) :
@@ -15,7 +27,7 @@ FragTrap::~FragTrap()
 void FragTrap::rangedAttack(std::string const & target) const
 {
 	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << "at range, causing " << _rng_d << " points of damage!" << std::endl;
+	std::cout << " at range, causing " << _rng_d << " points of damage!" << std::endl;
 }
 
 void FragTrap::meleeAttack(std::string const & target) const
@@ -38,7 +50,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
 	std::string moves[5] =
 	{
-		"BONK", "CONFINEMENT, THE ENNEMY KILLED HIMSELF", "m3", "m4", "m5"
+		"M16", "M4", "M60", "MP5", "M320"
 	};
 	//ADD RANDOM SHIT
 	if (_ep > 25)
