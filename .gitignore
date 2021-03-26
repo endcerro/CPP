@@ -4,3 +4,4 @@ phonebook
 *.o
 *.out
 *.gch
+*/.DS_Store
