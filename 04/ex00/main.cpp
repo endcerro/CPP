@@ -6,21 +6,19 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:19:55 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 17:20:43 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/26 17:39:11 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Sorcerer.hpp"
 
 int main()
 {
-	/* code */
-	Sorcerer s("Michel", "Warlock");
-	Victim v("Thomas");
-	
-	s.polymorph(v);
-
-	std::cout << s << std::endl	;
-	std::cout << v << std::endl	;
-
+	Sorcerer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
+	std::cout << robert << jim << joe;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
 	return 0;
+
 }

@@ -6,19 +6,19 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:16:39 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 17:20:52 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/26 17:38:30 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Victim.hpp"
 
 Victim::Victim(std::string name) : _name(name)
 {
-	std::cout << "Some random victim called " << name << " just appeared !" << std::endl;
+	std::cout << "Some random victim called " << name << " just appeared!" << std::endl;
 }
 
 Victim::~Victim()
 {
-	std::cout << "Victim "<< this->getName() << " just died for no apparent reason !" << std::endl;
+	std::cout << "Victim "<< this->getName() << " just died for no apparent reason!" << std::endl;
 }
 
 const std::string Victim::getName() const
@@ -33,6 +33,6 @@ void Victim::getPolymorphed() const
 
 std::ostream& operator<<(std::ostream& os, const Victim& s)
 {
-	os << "I am " << s.getName() << ", and i like otters!"; //fixed.toFloat();
+	os << "I'm " << s.getName() << " and I like otters!" << std::endl; //fixed.toFloat();
 	return (os);
 }
