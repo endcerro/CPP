@@ -11,5 +11,6 @@ int main()
 	SuperTrap chad("X");
 	chad.meleeAttack("doge");
 	chad.rangedAttack("cheems");
+	chad.disp();
 	return 0;
 }
