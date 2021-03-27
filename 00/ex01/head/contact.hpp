@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 17:45:54 by edal              #+#    #+#             */
-/*   Updated: 2020/11/15 17:53:03 by edal             ###   ########.fr       */
+/*   Updated: 2021/03/27 16:35:29 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef CONTACT_H
@@ -25,6 +25,7 @@ class Contact
 		Contact(void);
 		Contact(std::string a,std::string b,std::string c,std::string d);
 		~Contact(void);
+		Contact(Contact &a);
 		void Print(void) const;
 		void Setup(void);
 		std::string GetField(int index) const;

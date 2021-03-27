@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 18:12:26 by edal              #+#    #+#             */
-/*   Updated: 2021/03/25 15:54:16 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:45:21 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pony.hpp"
@@ -30,7 +30,11 @@ int main()
 
 	stack.present();
 	heap->present();
-	
+		
+	Pony copy(stack);
+
+	copy.present();
+
 	delete heap;
 	return (0);
 }

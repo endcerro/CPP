@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 16:28:58 by edal              #+#    #+#             */
-/*   Updated: 2021/02/13 17:07:37 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:36:42 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "contact.hpp"
@@ -28,6 +28,12 @@ std::string Contact::_labels[FIELDS_NB] =
 
 Contact::~Contact(void){}
 Contact::Contact(void){}
+
+Contact::Contact(Contact &a)
+{
+	this->_fields = a->_fields;
+}
+
 Contact::Contact(std::string a,std::string b,std::string c,std::string d)
 {
 	this->_fields[0] = a;

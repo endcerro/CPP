@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:47:54 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 17:53:43 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:33:03 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ class AWeapon
 
 	public:
 		// AWeapon();
-		virtual ~AWeapon();
-
 		AWeapon(std::string const & name, int apcost, int damage);
+		virtual ~AWeapon();
+		std::string  getName() const;
+		
 		// [...] ~AWeapon();
 		// std::string [...] getName() const;
 		// int getAPCost() const;

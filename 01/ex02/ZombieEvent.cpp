@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 19:09:20 by edal              #+#    #+#             */
-/*   Updated: 2021/02/13 17:07:53 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:01:30 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ZombieEvent.hpp"
@@ -22,6 +22,14 @@ std::string ZombieEvent::_names[5] =
 
 ZombieEvent::ZombieEvent(){}
 ZombieEvent::~ZombieEvent(){}
+
+ZombieEvent::ZombieEvent(const ZombieEvent &z) : _ZombieType(z._ZombieType)
+{}
+ZombieEvent& ZombieEvent::operator= (const ZombieEvent &z)
+{
+	this->_ZombieType = z._ZombieType;
+	return *this;
+}
 
 Zombie* ZombieEvent::newZombie(std::string name) const
 {
