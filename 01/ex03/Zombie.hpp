@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 17:07:57 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/25 16:53:04 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:39:50 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ class Zombie
 		Zombie(std::string name, std::string type);
 		Zombie(void);
 		~Zombie(void);
+			
+		Zombie(const Zombie &f);
+		Zombie& operator= (const Zombie &f);
+
 		void announce(void) const;
 		void setType(std::string type);
 		void setName(std::string type);

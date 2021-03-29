@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 17:07:58 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/25 16:53:14 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:36:52 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ class ZombieHorde {
 	
 	public:
 		ZombieHorde(int n);
+		ZombieHorde(void);
+		ZombieHorde(const ZombieHorde &z);
+		ZombieHorde& operator= (const ZombieHorde &f);
 		~ZombieHorde();
 		void Announce(void) const;
 	private:

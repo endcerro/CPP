@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 17:08:03 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/25 16:52:10 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/29 12:02:42 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 Human::Human() {}
 
+Human::Human(const Human &h) : _brain(h._brain){}
+
 Human::~Human() {}
+
+Human& Human::operator= (const Human &b)
+{
+	// _brain.setIq(b.getBrain().getIq());
+	// _brain.setEq(b.getBrain().getEq());
+	return *this;
+}
 
 const std::string Human::identify(void) const
 {
