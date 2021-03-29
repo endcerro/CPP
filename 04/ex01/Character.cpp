@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/29 14:07:24 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/03/29 15:54:34 by edal--ce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "Character.hpp"
+
+Character::Character(std::string const &name) : _name(name), _ap(40), _map(40), _weapon(0) {}
+Character::Character(const Character &c) : _name(c._name), _ap(c._ap), _map(c._map), _weapon(c._weapon)
+{}
+
+Character::~Character() {}
+
+void Character::equip(AWeapon *w)
+{
+	_weapon = w;
+}
+
+void Character::attack(Enemy *e)
+{
+	if (_ap >= _weapon->getAPCost())
+	{
+		_ap -= _weapon->getAPCost();
+		std::cout << _name << " attacks " << e->getType() << " with a " << _weapon->getName() << std::endl;
+		_weapon->attack();
+		e->takeDamage(_weapon->getDamage());
+	}
+}
+
+const int Character::getAP(void) const
+{
+	return _ap;
+}
+
+const int Character::getMAP(void) const
+{
+	return _map;
+}
+
+const AWeapon *Character::getWeapon(void) const
+{
+	return _weapon;
+}
+
+const std::string &Character::getName(void) const
+{
+	return _name;
+}
+
+std::ostream& operator<< (std::ostream& os, const Character &c)
+{
+	os << c.getName() << " has " << c.getAP() << " AP and ";
+	if (c.getWeapon() != NULL)
+		os << "wields a " << c.getWeapon()->getName() << std::endl;
+	else
+		os << "is unarmed" << std::endl;
+	return os;
+}
