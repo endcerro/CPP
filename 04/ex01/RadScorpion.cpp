@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:20:23 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/29 15:53:10 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/30 11:18:26 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ RadScorpion::~RadScorpion()
 void RadScorpion::takeDamage(int a)
 {
 	Enemy::takeDamage(a);
+}
+
+RadScorpion& RadScorpion::operator=(const RadScorpion &r)
+{
+	Enemy::operator=(r);
+	return *this;
 }

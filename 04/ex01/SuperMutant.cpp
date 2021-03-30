@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:20:23 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:07 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/30 11:18:44 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ SuperMutant::~SuperMutant()
 void SuperMutant::takeDamage(int a)
 {
 	Enemy::takeDamage(a - 3);
+}
+
+SuperMutant& SuperMutant::operator=(const SuperMutant &r)
+{
+	Enemy::operator=(r);
+	return *this;
 }

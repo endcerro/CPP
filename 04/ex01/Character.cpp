@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:07:24 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/29 15:54:34 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/30 11:15:01 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Character.hpp"
@@ -61,4 +61,13 @@ std::ostream& operator<< (std::ostream& os, const Character &c)
 	else
 		os << "is unarmed" << std::endl;
 	return os;
+}
+
+Character& Character::operator=(const Character &a)
+{
+	this->_name = a._name;
+	this->_ap = a._ap;
+	this->_map = a._map;
+	this->_weapon = a._weapon;
+	return *this;
 }
