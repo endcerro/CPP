@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:26:50 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 17:30:43 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/30 18:20:48 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 Ice::Ice() : AMateria("ice") {}
 
 Ice::~Ice() {}
+Ice::Ice(const Ice &c) : AMateria(c) {}
+
+Ice& Ice::operator=(const Ice &c)
+{
+	AMateria::operator=(c);
+	return *this;
+}
 
 void Ice::use(ICharacter &target)
 {

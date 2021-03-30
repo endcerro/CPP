@@ -6,13 +6,30 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:36:02 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 18:00:21 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/30 18:15:52 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(std::string name) : _name(name), _inv(0){}
+
+Character::Character(const Character &c) : _name(c._name), _inv(c._inv)
+{
+	for (int i = 0; i < c._inv; i++)
+		_mat[i] = c._mat[i]->clone();
+}
+
+Character& Character::operator=(const Character &c)
+{
+	_name = c._name;
+	for (int i = 0; i < c._inv; i++)
+	{
+		_mat[i] = c._mat[i]->clone();
+	}
+	_inv = c._inv;
+	return *this;
+}
 
 Character::~Character() {}
 
@@ -40,7 +57,9 @@ void Character::use(int idx, ICharacter& target)
 	}
 }
 
+
 std::string const & Character::getName(void) const
 {
 	return _name;
 }
+

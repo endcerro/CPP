@@ -6,15 +6,21 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:26:50 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 17:32:59 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/30 18:20:51 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("Cure") {}
-
 Cure::~Cure() {}
+Cure::Cure(const Cure &c) : AMateria(c) {}
+
+Cure& Cure::operator=(const Cure &c)
+{
+	AMateria::operator=(c);
+	return *this;
+}
 
 void Cure::use(ICharacter &target)
 {
