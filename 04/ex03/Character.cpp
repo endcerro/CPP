@@ -6,18 +6,27 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:36:02 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 18:15:52 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/31 11:06:27 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string name) : _name(name), _inv(0){}
+Character::Character(std::string name) : _name(name), _inv(0)
+{
+	for (int i = 0; i < 4; i++)
+		_mat[i] = 0;
+}
 
 Character::Character(const Character &c) : _name(c._name), _inv(c._inv)
 {
 	for (int i = 0; i < c._inv; i++)
-		_mat[i] = c._mat[i]->clone();
+	{
+		if (_mat[i])
+			_mat[i] = c._mat[i]->clone();
+		else
+			_mat[i] = 0;
+	}
 }
 
 Character& Character::operator=(const Character &c)
@@ -31,7 +40,11 @@ Character& Character::operator=(const Character &c)
 	return *this;
 }
 
-Character::~Character() {}
+Character::~Character() 
+{
+	for (int i = 0; i < 4; i++)
+		delete _mat[i];
+}
 
 void Character::equip(AMateria *m)
 {
@@ -41,7 +54,7 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	if (idx <= 4 && idx > 0)
+	if (idx < 4 && idx > 0)
 		_mat[idx] = 0;
 	for (int i = idx; i < 3; i++)
 	{
@@ -53,7 +66,8 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (idx < 4 && _inv >= idx)
 	{
-		_mat[idx]->use(target);
+		if (_mat[idx])
+			_mat[idx]->use(target);
 	}
 }
 

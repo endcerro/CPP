@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:26:50 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 18:20:48 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/03/31 10:47:14 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void Ice::use(ICharacter &target)
 	AMateria::use(target);
 }
 
-Ice *Ice::clone() const
+AMateria *Ice::clone() const
 {
-	return (new Ice);
+	return (new Ice(*this));
 }
