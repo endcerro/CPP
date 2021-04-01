@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:04:41 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/01 16:17:09 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/01 16:22:18 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class PresidentialPardonForm : public Form {
 public:
 
-	PresidentialPardonForm(std::string name, int s, int e);
+	PresidentialPardonForm(std::string target);
 	~PresidentialPardonForm();
 	
 };
