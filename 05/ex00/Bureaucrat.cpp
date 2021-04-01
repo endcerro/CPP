@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:16 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/31 16:41:42 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/01 15:34:29 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Bureaucrat.hpp"
@@ -21,9 +21,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 }
 
 Bureaucrat::~Bureaucrat() {}
-
-
-
 
 
 void Bureaucrat::incrementGrade() 
@@ -52,11 +49,6 @@ const std::string Bureaucrat::getName() const
 {
 	return _name;
 }
-
-
-
-
-
 
 Bureaucrat::GradeTooHighException::GradeTooHighException() throw() {}
 

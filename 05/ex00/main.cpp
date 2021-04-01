@@ -6,11 +6,13 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:58 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/31 16:44:04 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:26:05 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 
 int main()
 {
