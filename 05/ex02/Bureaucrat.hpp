@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:16 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/01 15:38:12 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/02 16:51:42 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef BREAUCRAT_HPP
@@ -41,6 +41,7 @@ class Bureaucrat {
 			virtual const char* what() const throw();
 		};
 
+		void executeForm(Form const &c);
 		void incrementGrade();
 		void decrementGrade();
 		void	signForm(const Form &f) const;

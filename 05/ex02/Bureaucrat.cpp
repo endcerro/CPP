@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:16 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/01 15:37:52 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/02 16:53:36 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Bureaucrat.hpp"
@@ -22,7 +22,19 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 
 Bureaucrat::~Bureaucrat() {}
 
-
+void Bureaucrat::executeForm(Form const &f)
+{
+	try
+	{
+		f.execute(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what();
+		return ;
+	}
+	std::cout << _name << " executes " << f.getName() << std::endl;
+}
 
 
 
