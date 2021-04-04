@@ -6,13 +6,13 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/03 18:11:46 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/04 15:41:19 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
 
 
-Converter::Converter(std::string av) : _in(av)
+Converter::Converter(std::string av) : _in(av), _ok(0)
 {
 	// for (int i = 0; i < 4; i++)
 	// 	_conv[i] = 0;
@@ -20,6 +20,8 @@ Converter::Converter(std::string av) : _in(av)
 
 void Converter::print()
 {
+	if (!_ok)
+		return;
 	std::cout << "char : " << _schar.str() << std::endl;
 	std::cout << "int : " << _sint.str() <<std::endl;
 	std::cout << "float : " << _sfloat.str() << std::endl;
@@ -36,24 +38,27 @@ bool Converter::isInt()
 		if ((_in[i] < '0' || _in[i] > '9'))
 			return (0);
 	}
-	int v;
-	try {
-		v = stoi(_in); 
+	int d = 0;
+	try 
+	{
+		d = stoi(_in);	
 	}
 	catch (std::exception &e)
 	{
-		// if (e.type() == std::out_of_range)
-			// std::cout << "nice";
-		_sint << "Out of range";
+		std::cout << "Number is too big/small/not supported" << std::endl;
 		return 1;
 	}
-	_sint << v;
-	_sfloat << v << ".0f";
-	_sdouble << v << ".0";
-	if (v >= 32 && v <= 126)
-		_schar << static_cast<char>(v);
+	if (d > std::numeric_limits<int>::max())
+		_sint << "Number is too big for int";
+	else
+		_sint << d;
+	_sfloat << d << ".0f";
+	_sdouble << d << ".0";
+	if (d >= 32 && d <= 126)
+		_schar << static_cast<char>(d);
 	else
 		_schar << "Non displayable";
+	_ok = 1;
 	return (1);
 }
 
@@ -84,7 +89,15 @@ bool Converter::isFloat()
 		if ( v - (static_cast<int>(v)) == 0)
 			_sfloat << ".0";
 		_sfloat << "f";
-		_sint << static_cast<int>(v);
+		if ( std::numeric_limits<int>::max() < v)
+			_sint << "Non displayable";
+		else if ( std::numeric_limits<int>::min() > v)
+			_sint << "Non displayable";
+		else if ()
+		else
+		{
+			_sint << static_cast<int>(v);
+		}
 		_sdouble << v;
 		if ( v - (static_cast<int>(v)) == 0)
 			_sdouble << ".0";
@@ -92,7 +105,9 @@ bool Converter::isFloat()
 			_schar << static_cast<char>(v);
 		else
 			_schar << "Non displayable";
+		_ok = 1;
 		return 1;
+
 	}
 	return 0;
 }
@@ -117,7 +132,10 @@ bool Converter::isDouble()
 		if ( v - (static_cast<int>(v)) == 0)
 			_sfloat << ".0";
 		_sfloat << "f";
-		_sint << static_cast<int>(v);
+		if ( std::numeric_limits<int>::max() < v)
+			_sint << "Non displayable";
+		else
+			_sint << static_cast<int>(v);
 		_sdouble << v;
 		if ( v - (static_cast<int>(v)) == 0)
 			_sdouble << ".0";
@@ -125,6 +143,7 @@ bool Converter::isDouble()
 			_schar << static_cast<char>(v);
 		else
 			_schar << "Non displayable";
+		_ok = 1;
 		return 1;
 	}
 	return 0;
@@ -140,6 +159,7 @@ bool Converter::isChar()
 		_sint << v;
 		_sdouble << v << ".0";
 		_schar << static_cast<char>(v);
+		_ok = 1;
 		return 1;
 	}
 	return 0;

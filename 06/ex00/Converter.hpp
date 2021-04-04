@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 15:17:09 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/03 17:59:59 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/04 14:22:36 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ class Converter {
 	std::stringstream _sfloat;
 	std::stringstream _schar;
 	std::stringstream _sdouble;
+
+	int _ok;
 };
 
 #endif

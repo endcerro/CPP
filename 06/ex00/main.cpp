@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:28:54 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/03 18:19:48 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/04 14:52:25 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,29 +77,44 @@ int main(int ac, char **av)
 			std::cout << "Int can be smaller than double" << std::endl;
 		return (1);
 	}
-	Converter c(av[1]);
+	std::string tmp(av[1]);
+	if (tmp == "nan")
+	{
+		tmp = "nanf";
+	}
+	else if (tmp == "-inff")
+		tmp = "-inf";
+	else if (tmp == "+inff")
+		tmp = "+inf";
+	else if (tmp == "inff")
+		tmp = "inf";
+	Converter c(tmp);
+	std::cout << tmp << std::endl	;
 	if (c.isInt())
 	{
-		std::cout << "that's an int" << std::endl;
+		c.print();
 	}
 	else if (c.isFloat())
 	{
-		std::cout << "that's a float" << std::endl;
+		std::cout << "F" << std::endl;
+		c.print();
 	}
 	else if (c.isDouble())
 	{
-		std::cout << "that's a double" << std::endl;	
+		std::cout << "D" << std::endl;
+		c.print();
 	}
 	else if (c.isChar())
 	{
-		std::cout << "That's a char" << std::endl;
+
+		c.print();
 	}
 	else
 	{
 		std::cout << "wtf is that" << std::endl;
 		return 1;
 	}
-	c.print();
+	
 
 	// std::stringstream t[4];
 
