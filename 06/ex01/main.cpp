@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:52:46 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/13 17:08:35 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/13 17:15:27 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,20 @@ struct Data { std::string s1; int n; std::string s2; };
 
 char randchar()
 {
-	
 	std::string test = "abcdefghijlmnopqrstuvwxyz";
 	char t = test[rand() % 26];
-	// std::cout << t;
-	return t ;
+	return t;
 }
 
-void *serialize(void) //Size of char is 1, int is 8
+void *serialize(void)
 {
 	srand(time(NULL));
+	
 	char *charv = new char[20];
 	int *intv = reinterpret_cast<int *>(charv);
 	char c;
 
 	std::cout << "S1 build : ";
-	
 	for (int i = 0; i < 8; i++)
 	{
 		c = randchar();
@@ -43,7 +41,6 @@ void *serialize(void) //Size of char is 1, int is 8
 		charv[i] = c;
 	}
 	std::cout << std::endl;
-	
 	intv[2] = 420;
 	std::cout << "Int is : " << intv[2] <<std::endl;
 	std::cout << "S2 build : ";
