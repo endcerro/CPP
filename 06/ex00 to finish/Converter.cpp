@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/04 15:41:19 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:50:08 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
@@ -93,11 +93,8 @@ bool Converter::isFloat()
 			_sint << "Non displayable";
 		else if ( std::numeric_limits<int>::min() > v)
 			_sint << "Non displayable";
-		else if ()
 		else
-		{
 			_sint << static_cast<int>(v);
-		}
 		_sdouble << v;
 		if ( v - (static_cast<int>(v)) == 0)
 			_sdouble << ".0";
