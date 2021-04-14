@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 17:51:05 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 15:56:57 by edal--ce         ###   ########.fr       */
+/*   Created: 2021/04/14 15:29:33 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/04/14 17:35:38 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+
+#include <iostream>
+#include <algorithm>
 
 template<typename T>
-void swap(T& a, T& b)
+typename T::iterator easyfind(T& cont, int n)
 {
-	T tmp = a;
-	a = b;
-	b = tmp;
-}
-
-template<typename T>
-T const & max(T const & a, T const & b)
-{
-	return ((a > b) ? a : b);
-}
-
-template<typename T>
-T const & min(T const & a, T const & b)
-{
-	return ((a < b) ? a : b);
+	typename T::iterator it = std::find(cont.begin(), cont.end(), n);
+	if (it == cont.end())
+		throw std::exception();
+	return (it);
 }
 
 #endif

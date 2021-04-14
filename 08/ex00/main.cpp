@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 17:51:05 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 15:56:57 by edal--ce         ###   ########.fr       */
+/*   Created: 2021/04/14 15:29:44 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/04/14 17:35:13 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#include "easyfind.hpp"
+#include <vector>
+#include <list>
+int main()
+{	
+	// int arr[5] 
+	std::list<int> v;// = {1,2,3,4,5};
+	v.push_back(1);
+	v.push_back(2);
+	v.push_back(3);
+	v.push_back(4);
+	v.push_back(5);
 
-template<typename T>
-void swap(T& a, T& b)
-{
-	T tmp = a;
-	a = b;
-	b = tmp;
+	easyfind(v, 4);
+	// std::cout << ret << std::endl;
+	return 0;
 }
-
-template<typename T>
-T const & max(T const & a, T const & b)
-{
-	return ((a > b) ? a : b);
-}
-
-template<typename T>
-T const & min(T const & a, T const & b)
-{
-	return ((a < b) ? a : b);
-}
-
-#endif
