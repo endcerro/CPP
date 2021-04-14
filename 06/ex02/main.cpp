@@ -6,11 +6,15 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 17:16:17 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/13 17:45:46 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/14 13:50:45 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+
 #include <time.h>
 #include <random>
 #include <iostream>

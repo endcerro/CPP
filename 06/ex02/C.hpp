@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 17:16:41 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 13:49:58 by edal--ce         ###   ########.fr       */
+/*   Created: 2021/04/14 13:48:03 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/04/14 13:49:52 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef C_HPP
+#define C_HPP
 
-class Base {
-	
-	public:
-		Base();
-		virtual ~Base();
+#include "Base.hpp"
+
+class C : public Base {
+public:
+
+	C();
+	~C();
 	
 };
-
-
 #endif
