@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 16:24:25 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/09 13:38:03 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:55:44 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ZOMBIE_H
@@ -18,7 +18,7 @@
 class Zombie
 {
 	public :
-		Zombie(void){};
+		Zombie(void);
 		//COPILEN STUFF
 		Zombie(const Zombie &f);
 		Zombie& operator= (const Zombie &f);
