@@ -6,7 +6,7 @@
 /*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 17:07:58 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 21:06:00 by edal             ###   ########.fr       */
+/*   Updated: 2021/04/19 17:07:33 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ZOMBIEHORDE_H
 
 #include "Zombie.hpp"
+#include <stdlib.h>
+#include <time.h>
 
 class ZombieHorde {
 	

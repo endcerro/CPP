@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 18:12:26 by edal              #+#    #+#             */
-/*   Updated: 2021/03/27 16:45:21 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/19 16:58:14 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pony.hpp"
@@ -27,14 +27,11 @@ int main()
 {
 	Pony stack = PonyOnTheStack();
 	Pony *heap = PonyOnTheHeap();
-
 	stack.present();
 	heap->present();
-		
+
 	Pony copy(stack);
-
 	copy.present();
-
 	delete heap;
 	return (0);
 }

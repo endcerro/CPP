@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 17:07:57 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/29 11:40:43 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/19 17:07:06 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ ZombieHorde::ZombieHorde(int n) : _ammount(n)
 {
 	Zombie *horde = new Zombie[n];
 	this->_horde = horde;
-	std::srand (time(NULL));
+	srand(time(NULL));
 	for (int i = 0; i < this->_ammount; i++)
 	{
-		this->_horde[i].setName(this->_names[std::rand() % 5]);
-		this->_horde[i].setType(this->_types[std::rand() % 5]);
+		this->_horde[i].setName(this->_names[rand() % 5]);
+		this->_horde[i].setType(this->_types[rand() % 5]);
 	}
 }
 

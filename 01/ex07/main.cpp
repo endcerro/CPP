@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 15:44:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/25 17:16:47 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/19 17:33:09 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string.h>
 #include <fstream>
 
 std::string toUpper(std::string input)
@@ -50,10 +51,11 @@ int main(int argc, char const *argv[])
 		input.close();
 		return (1);
 	}
-	output.open(toUpper(argv[1]) + ".replace");
+	std::string test = toUpper(argv[1]) + ".replace";
+	output.open(static_cast<const char *>(test.c_str()));
 	int i = 0;
 	while (getline(input, line))
-	{ //Maybe avoid getting more \n than needed
+	{ 
 		if (i++)
 			output << std::endl;
 		if (line[0] != 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 17:08:04 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/29 11:46:15 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/19 17:11:16 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	const Brain &getBrain(void) const;
 
 	private : 
-	const Brain _brain;
+	Brain _brain;
 
 	
 };
