@@ -12,7 +12,7 @@ class Fixed
 		Fixed(float rval);
 		Fixed(const Fixed &f);
 		Fixed& operator= (const Fixed &f);
-		void setRawBits(int raw);
+		void setRawBits(const int raw);
 		int toInt() const;
 		float toFloat() const;
 		int getRawBits() const;

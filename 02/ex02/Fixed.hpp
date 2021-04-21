@@ -19,7 +19,7 @@ class Fixed
 		int operator== (const Fixed &f2);
 		int operator!= (const Fixed &f2);
 		int operator+ (const Fixed &f2);
-		int operator-1 (const Fixed &f2);
+		int operator- (const Fixed &f2);
 		void setRawBits(int raw);
 		int toInt() const;
 		float toFloat() const;

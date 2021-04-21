@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 14:08:50 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/27 16:58:02 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/21 11:55:43 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 		Fixed(const Fixed &f);
 		~Fixed();
 		int getRawBits() const;
-		void setRawBits(int raw);
+		void setRawBits(int const raw);
 		Fixed& operator= (const Fixed &f);
 	private :
 		int _fpv;

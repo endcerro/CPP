@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 19:09:20 by edal              #+#    #+#             */
-/*   Updated: 2021/03/27 17:01:30 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/20 15:26:35 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ZombieEvent.hpp"
@@ -14,8 +14,8 @@
 std::string ZombieEvent::_names[5] = 
 {
 	"Wilfried",
-	"Jonathan", 
-	"Thimotée", 
+	"Jonathan",
+	"Thimotée",
 	"Paul André",
 	"Sans"
 };

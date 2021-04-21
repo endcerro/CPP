@@ -33,7 +33,7 @@ int Fixed::getRawBits() const
 	/*Just give the raw bits*/
 	return this->_rval;
 }
-void Fixed::setRawBits(int raw)
+void Fixed::setRawBits(const int raw)
 {
 	// std::cout << "setRawBits called" << std::endl;	
 	/*Just set the raw bits from param*/
@@ -57,9 +57,8 @@ float Fixed::toFloat() const
 	Thanks to M A T H S we get the value we want*/
 	return (float)_rval / (float)(1 << _nfb);
 }
-Fixed& Fixed::operator= (const Fixed &f) //Might not work
+Fixed& Fixed::operator= (const Fixed &f)
 {
-	
 	//To compare two rvals we just look if the raw bits are the same
 	std::cout << "assignation operator called" << std::endl;
 	_rval = f.getRawBits();
