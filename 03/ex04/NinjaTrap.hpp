@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 16:01:57 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 16:10:44 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 15:15:51 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef NINJATRAP_H
@@ -16,7 +16,7 @@
 #include "FragTrap.hpp"
 
 
-class NinjaTrap : public virtual ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 	public:	
 		NinjaTrap(std::string name);

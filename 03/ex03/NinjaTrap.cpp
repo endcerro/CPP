@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 16:01:41 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 16:03:47 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 14:51:21 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "NinjaTrap.hpp"
@@ -29,16 +29,20 @@ NinjaTrap::~NinjaTrap()
 void NinjaTrap::ninjaShoeBox(ClapTrap &c) const
 {
 	std::cout << "target locked, ClapTrap" << std::endl;
+	c.takeDamage(20);
 }
 void NinjaTrap::ninjaShoeBox(ScavTrap &s) const
 {
 	std::cout << "target locked, ScavTrap" << std::endl;
+	s.takeDamage(20);
 }
 void NinjaTrap::ninjaShoeBox(FragTrap &f) const
 {
 	std::cout << "target locked, FragTrap" << std::endl;
+	f.takeDamage(20);
 }
 void NinjaTrap::ninjaShoeBox(NinjaTrap &n) const
 {
 	std::cout << "target locked, NinjaTrap" << std::endl;
+	n.takeDamage(20);
 }

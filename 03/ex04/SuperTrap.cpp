@@ -1,22 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   SuperTrap.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 16:16:57 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/04/23 15:20:17 by edal--ce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(std::string name) : ClapTrap(name), FragTrap(name), NinjaTrap(name) //TODO
+SuperTrap::SuperTrap(std::string name) : ClapTrap(100, 120, 1, name, "SUPER-TP", 60, 20, 5), FragTrap(name), NinjaTrap(name)
 {
-	//TODO
-	_hp = FragTrap::_hp;
-	_max_hp = FragTrap::_max_hp;
-	_ep = NinjaTrap::_ep;
-	_max_ep = NinjaTrap::_max_ep;
-	_lvl = 1;
-	_cqc_d = NinjaTrap::_cqc_d;
-	_rng_d = FragTrap::_rng_d;
-	_armr = FragTrap::_armr;
-	std::cout << "S-TP " <<_name << " has entered the game" << std::endl;
+	std::cout << "SUPER-TP " <<_name << " has entered the game" << std::endl;
 }
 
 SuperTrap::~SuperTrap()
 {
-	std::cout << "S-TP "<< _name << " left the game" << std::endl;
+	std::cout << "SUPER-TP "<< _name << " left the game" << std::endl;
 }
 
 void SuperTrap::rangedAttack(const std::string& target)
@@ -37,6 +39,6 @@ void SuperTrap::disp() const
 	std::cout << "cqc_d " << _cqc_d << std::endl;
 	std::cout << "rng_d " << _rng_d << std::endl;
 	std::cout << "armr " << _armr << std::endl;
-	// std::cout << "hp " << _hp << std::endl;
+	std::cout << "hp " << _hp << std::endl;
 	// NinjaTrap::meleeAttack(target);
 }
