@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:11:05 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/29 15:42:02 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 16:22:40 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Enemy.hpp"
@@ -39,6 +39,6 @@ void Enemy::takeDamage(int d)
 {
 	if (d > 0)
 		_hp = (d >= _hp) ? 0 : (_hp - d);
-	if (_hp <= 0)
-		delete this;
+	// if (_hp <= 0)
+	// 	delete this;
 }

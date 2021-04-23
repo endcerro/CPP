@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:07:24 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/23 16:04:06 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 16:28:27 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Character.hpp"
@@ -27,13 +27,20 @@ void Character::equip(AWeapon *w)
 
 void Character::attack(Enemy *e)
 {
-	if (_ap >= _weapon->getAPCost())
+	if (_weapon && _ap >= _weapon->getAPCost())
 	{
 		_ap -= _weapon->getAPCost();
 		std::cout << _name << " attacks " << e->getType() << " with a " << _weapon->getName() << std::endl;
 		_weapon->attack();
 		e->takeDamage(_weapon->getDamage());
 	}
+	// else
+	// 	std::cout << _name << " hasn't enough mana to attack !" << std::endl;
+}
+
+void Character::recoverAP(void)
+{
+	_ap = ((_ap + 10) > 40) ? 40 : _ap + 10;
 }
 
 int Character::getAP(void) const

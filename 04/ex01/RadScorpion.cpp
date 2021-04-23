@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:20:23 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 11:18:26 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 16:24:18 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
 
 RadScorpion::RadScorpion(const RadScorpion &s) : Enemy(s)
 {
+	_hp = s._hp;
+	_type = s._type;
 	std::cout << "* click click click *" << std::endl;
+
 }
 
 RadScorpion::~RadScorpion() 
