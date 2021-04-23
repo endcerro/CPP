@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 16:16:57 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/23 15:20:17 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 15:32:35 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "SuperTrap.hpp"
@@ -40,5 +40,4 @@ void SuperTrap::disp() const
 	std::cout << "rng_d " << _rng_d << std::endl;
 	std::cout << "armr " << _armr << std::endl;
 	std::cout << "hp " << _hp << std::endl;
-	// NinjaTrap::meleeAttack(target);
 }
