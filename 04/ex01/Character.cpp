@@ -6,12 +6,15 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:07:24 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 11:15:01 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 16:04:06 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Character.hpp"
 
-Character::Character(std::string const &name) : _name(name), _ap(40), _map(40), _weapon(0) {}
+Character::Character(std::string const &name) : _ap(40), _map(40), _weapon(0)
+{
+	_name = name;
+}
 Character::Character(const Character &c) : _name(c._name), _ap(c._ap), _map(c._map), _weapon(c._weapon)
 {}
 
@@ -33,17 +36,17 @@ void Character::attack(Enemy *e)
 	}
 }
 
-const int Character::getAP(void) const
+int Character::getAP(void) const
 {
 	return _ap;
 }
 
-const int Character::getMAP(void) const
+int Character::getMAP(void) const
 {
 	return _map;
 }
 
-const AWeapon *Character::getWeapon(void) const
+AWeapon *Character::getWeapon(void) const
 {
 	return _weapon;
 }

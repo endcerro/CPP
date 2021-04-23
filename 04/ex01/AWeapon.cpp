@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:47:52 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/29 13:07:04 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 15:57:51 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 AWeapon::~AWeapon()
 {}
 
-AWeapon::AWeapon(const AWeapon &a) : _dmg(a._dmg), _cost(a._cost), _name(a._name)
+AWeapon::AWeapon(const AWeapon &a) :_name(a._name), _dmg(a._dmg), _cost(a._cost)
 {}
 
 AWeapon& AWeapon::operator=(const AWeapon &a)
@@ -26,7 +26,7 @@ AWeapon& AWeapon::operator=(const AWeapon &a)
 	return *this;
 }
 
-AWeapon::AWeapon(const std::string &n, int a, int d) : _name(n), _cost(a), _dmg(d)
+AWeapon::AWeapon(const std::string &n, int a, int d) : _name(n), _dmg(d), _cost(a)
 {}
 
 int AWeapon::getDamage(void) const
