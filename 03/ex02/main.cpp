@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 14:15:02 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 15:56:56 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:54:04 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ScavTrap.hpp"
@@ -15,9 +15,16 @@
 
 int main()
 {
-	FragTrap f1("R4");
-	f1.vaulthunter_dot_exe("John");
-	ScavTrap s1("R3");
-	s1.challengeNewcomer();
+	ClapTrap c("base");
+	FragTrap f("frag");
+	ScavTrap s("scav");
+
+
+	f.rangedAttack("Flowey");
+	f.vaulthunter_dot_exe("John");
+
+	s.challengeNewcomer();
+
+
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 13:01:11 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 15:35:37 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 12:21:30 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ class FragTrap
 {
 	public:	
 		FragTrap(std::string name);
+		FragTrap(const FragTrap &f);
+		FragTrap& operator=(const FragTrap &f);
 		~FragTrap();
+		
 		void rangedAttack(std::string const & target) const;
 		void meleeAttack(std::string const & target) const;
 		void takeDamage(unsigned int amount);

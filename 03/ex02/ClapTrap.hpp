@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 14:07:36 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 15:56:16 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:39:17 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef CLAPTRAP_H
@@ -17,7 +17,9 @@ class ClapTrap
 {
 	public:	
 		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &c);
 		~ClapTrap();
+		ClapTrap& operator=(const ClapTrap &f);
 		void rangedAttack(std::string const & target) const;
 		void meleeAttack(std::string const & target) const;
 		void takeDamage(unsigned int amount);
@@ -29,6 +31,7 @@ class ClapTrap
 		unsigned int _max_ep;
 		unsigned int _lvl;
 		std::string _name;
+		std::string _type;
 		unsigned int _cqc_d;
 		unsigned int _rng_d;
 		unsigned int _armr;

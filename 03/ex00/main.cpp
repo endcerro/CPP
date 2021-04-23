@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 12:58:24 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/26 15:47:39 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/23 12:50:01 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,23 @@
 int main()
 {
 	FragTrap f1("Raiden");
-	FragTrap f2("V");
+	FragTrap f2("Dante");
+	f1.meleeAttack("peon");
+	f1.meleeAttack("peon");
+	f1.rangedAttack("peon");
+	f1.rangedAttack("peon");
+	f1.vaulthunter_dot_exe("Michel");
+	f1.vaulthunter_dot_exe("Michel");
+	f1.vaulthunter_dot_exe("Michel");
 
-	f2.meleeAttack("Michel");
-	f1.rangedAttack("John");
-	f1.vaulthunter_dot_exe("Cena");
-	f1.vaulthunter_dot_exe("Cena");
-	f1.vaulthunter_dot_exe("Cena");
-	f1.vaulthunter_dot_exe("Cena");
-	f1.vaulthunter_dot_exe("Cena");
-	f1.vaulthunter_dot_exe("Cena");
-	f1.vaulthunter_dot_exe("Cena");
-	f1.takeDamage(800);
+	FragTrap f3(f1);
+	f3.vaulthunter_dot_exe("Tom");
+	f1.vaulthunter_dot_exe("Michel");
+	
+	f2 = f1;
+	f2.vaulthunter_dot_exe("Nope");
+	f2.takeDamage(1001);
+	f2.beRepaired(500);
+
 	return 0;
 }
