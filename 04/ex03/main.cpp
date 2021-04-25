@@ -6,65 +6,61 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 15:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/31 16:13:12 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:07:23 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "Fire.hpp"
 #include "MateriaSource.hpp"
 int main()
 {
-	// Character enzo("Enzo");
+	Character enzo("xmg1tp");
 
-	// Character target("TGT");
+	Character target("newb");
 
-	// Ice *i = new Ice;
-	// Cure *c = new Cure;
+	Ice *i = new Ice;
+	Cure *c = new Cure;
 
-	// Ice *ia = new Ice;
-	// Cure *ca = new Cure;
-
-	// Ice *ib = new Ice;
-	// Cure *cb = new Cure;
-
-	// // enzo.equip(i);
-	// // enzo.equip(ia);
-	// // enzo.equip(ib);
 	
-	// // enzo.equip(c);
-	// // enzo.equip(ca);
+	std::cout << "3 Attacks, 2 of the same spell" << std::endl;
+	enzo.equip(i);
+	enzo.equip(c);
+	enzo.equip(c);
+	enzo.use(0, target);
+	enzo.use(1, target);
+	enzo.use(2, target);
 
-	// // enzo.equip(cb);
+	std::cout << "3 Attacks, new spell added" << std::endl;
+	enzo.equip(c->clone());
+	enzo.use(0, target);
+	enzo.use(1, target);
+	enzo.use(2, target);
 
+	std::cout << "Subject test\n\n" << std::endl;
 
-	// enzo.use(0, target);
-	// enzo.use(1, target);
-	// enzo.use(2, target);
-	// enzo.use(3, target);
-	// enzo.use(4, target);
-	// enzo.use(5, target);
-	// enzo.use(6, target);
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Fire());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
-	// MateriaSource m;
-	// m.learnMateria(i);
-	// m.learnMateria(c);
-
-	// enzo.equip(m.createMateria("ice"));
-	// enzo.equip(m.createMateria("ice"));
-	// enzo.equip(m.createMateria("ice"));
-	// enzo.equip(m.createMateria("cure"));
-	// enzo.use(0, target);
-	// enzo.use(1, target);
-	// enzo.use(2, target);
-	// enzo.use(3, target);
-	
-	// enzo.unequip(1);
-	// enzo.use(0, target);
-	// enzo.use(1, target);
-	// enzo.use(2, target);
-	// enzo.use(3, target);
+	tmp = src->createMateria("fire");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	delete bob;
+	delete me;
+	delete src;
 	
 	return 0;
 }

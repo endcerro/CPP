@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Fire.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 13:14:00 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/25 16:51:25 by edal--ce         ###   ########.fr       */
+/*   Created: 2021/04/25 17:06:13 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/04/25 17:07:03 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "Fire.hpp"
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+Fire::Fire() : AMateria("fire") {}
 
-#include <iostream>
-#include <string>
+Fire::~Fire() {}
+Fire::Fire(const Fire &c) : AMateria(c) {}
 
-class AMateria;
-#include "AMateria.hpp"
-
-class ICharacter 
+Fire& Fire::operator=(const Fire &c)
 {
-	
-	public:
+	AMateria::operator=(c);
+	return *this;
+}
 
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
-};
+void Fire::use(ICharacter &target)
+{
+	std::cout << "* shoots a fireball at " << target.getName() << " *" << std::endl;
+	AMateria::use(target);
+}
 
-#endif
+AMateria *Fire::clone() const
+{
+	return (new Fire(*this));
+}

@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:36:02 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/31 11:06:27 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:02:02 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,12 @@ Character::Character(const Character &c) : _name(c._name), _inv(c._inv)
 Character& Character::operator=(const Character &c)
 {
 	_name = c._name;
-	for (int i = 0; i < c._inv; i++)
+	for (int i = 0; i < 4; i++)
 	{
-		_mat[i] = c._mat[i]->clone();
+		delete _mat[i];
+		_mat[i] = 0;
+		if (c._mat[i])
+			_mat[i] = c._mat[i]->clone();
 	}
 	_inv = c._inv;
 	return *this;
@@ -48,6 +51,11 @@ Character::~Character()
 
 void Character::equip(AMateria *m)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (m == _mat[i])
+			return;
+	}
 	if (_inv < 4 && m != 0)
 		_mat[_inv++] = m;
 }

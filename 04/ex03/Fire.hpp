@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Fire.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 13:26:46 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/25 17:06:22 by edal--ce         ###   ########.fr       */
+/*   Created: 2021/04/25 17:05:08 by edal--ce          #+#    #+#             */
+/*   Updated: 2021/04/25 17:06:20 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef FIRE_HPP
+#define FIRE_HPP 
+
 
 #include "AMateria.hpp"
 
-class Ice : public AMateria {
+class Fire : public AMateria {
 
 	public:
-		Ice();
+		Fire();
 		
-		Ice(const Ice &c);
-		Ice& operator=(const Ice &c);
+		Fire(const Fire &c);
+		Fire& operator=(const Fire &c);
 
-		~Ice();
+		~Fire();
 		void use(ICharacter &t);
 		AMateria* clone() const;
 };
