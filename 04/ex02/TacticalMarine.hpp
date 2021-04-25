@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:42:49 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 11:49:40 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 16:34:28 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class TacticalMarine : public ISpaceMarine {
 	
 	public:
 		TacticalMarine();
+		TacticalMarine(const TacticalMarine &t);
+		TacticalMarine& operator=(const TacticalMarine &t);
 		~TacticalMarine();
 
 		ISpaceMarine* clone() const;

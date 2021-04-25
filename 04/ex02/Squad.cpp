@@ -6,13 +6,13 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:33:02 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 12:37:00 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 16:26:56 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad() : _c(0), _s(0) {}
+Squad::Squad() : ISquad(), _c(0), _s(0) {}
 
 Squad::Squad(const Squad &c)
 {

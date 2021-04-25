@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:45:04 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 11:49:27 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 16:37:55 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "TacticalMarine.hpp"
@@ -14,6 +14,19 @@
 TacticalMarine::TacticalMarine() 
 {
 	std::cout << "Tactical Marine ready for battle!" << std::endl;
+}
+
+TacticalMarine::TacticalMarine(const TacticalMarine &t) 
+{
+	(void) t;
+	std::cout << "Tactical Marine ready for battle!" << std::endl;
+}
+
+TacticalMarine& TacticalMarine::operator=(const TacticalMarine &t) 
+{
+	(void) t;
+	std::cout << "Tactical Marine ready for battle!" << std::endl;
+	return *this;
 }
 
 TacticalMarine::~TacticalMarine() 
@@ -38,5 +51,5 @@ void TacticalMarine::meleeAttack() const
 
 ISpaceMarine* TacticalMarine::clone() const
 {
-	return new TacticalMarine();
+	return new TacticalMarine(*this);
 }
