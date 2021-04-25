@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:47:54 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/23 16:19:37 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 15:57:55 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 #include <iostream>
 
+//COPILEN OK
+
 class AWeapon
 {
-
 	public:
 		AWeapon(const std::string &name, int apcost, int damage);
 		AWeapon(const AWeapon &w);

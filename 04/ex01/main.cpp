@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 15:26:29 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/23 16:04:47 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 16:12:59 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,29 @@ int main()
 
 	Character* me = new Character("xmg1tp");
 	std::cout << *me;
+	
 	Enemy* b = new RadScorpion();
+	Enemy* c = new SuperMutant();
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
+	
+	me->attack(b);
+
 	me->equip(pr);
 	std::cout << *me;
 	me->equip(pf);
-	me->attack(b);
 	std::cout << *me;
-	me->equip(pr);
-	std::cout << *me;
-	me->attack(b);
-	std::cout << *me;
-	me->attack(b);
-	std::cout << *me;
-	return (0);
+	me->attack(c);
+	me->equip(pf);
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
+	//Super Mutant dies here
+	// me->attack(c);
+	
+	delete pr;
+	delete pf;
+	delete b;
+	delete me;
+	return 0;
 }

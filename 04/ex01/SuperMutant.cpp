@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:20:23 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/30 11:18:44 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 16:01:02 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ SuperMutant::SuperMutant() : Enemy(170, "Super Mutant")
 
 SuperMutant::SuperMutant(const SuperMutant &s) : Enemy(s)
 {
+	_hp = s._hp;
+	_type = s._type;
 	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 

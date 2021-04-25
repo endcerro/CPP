@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:07:24 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/23 16:28:27 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 16:10:55 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Character.hpp"
@@ -33,9 +33,9 @@ void Character::attack(Enemy *e)
 		std::cout << _name << " attacks " << e->getType() << " with a " << _weapon->getName() << std::endl;
 		_weapon->attack();
 		e->takeDamage(_weapon->getDamage());
+		if (e->getHP() == 0)
+			delete e;
 	}
-	// else
-	// 	std::cout << _name << " hasn't enough mana to attack !" << std::endl;
 }
 
 void Character::recoverAP(void)
