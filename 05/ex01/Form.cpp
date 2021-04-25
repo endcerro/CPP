@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 14:23:40 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/25 17:48:33 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:55:45 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ Form::Form(std::string name, int s, int e) : _name(name), _signed(0), _slevel(s)
 		throw GradeTooHighException();
 	if (_elevel > 150 || _slevel > 150)
 		throw GradeTooLowException();
+}
+
+Form::Form(const Form &f) : _name(f._name), _signed(f._signed), _slevel(f._elevel), _elevel(f._elevel)
+{}
+
+Form& Form::operator=(const Form &f)
+{
+	_name = f._name;
+	_signed = f._signed;
+	return *this;
 }
 
 Form::~Form() {}

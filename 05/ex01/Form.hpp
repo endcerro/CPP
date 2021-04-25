@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 14:23:40 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/01 15:42:21 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:51:45 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Form {
 	
 	public:
 		Form(std::string name, int s, int e);
+		Form(const Form &f);
+		Form& operator=(const Form &f);
 		~Form();
 		
 		class GradeTooHighException : public std::exception
