@@ -6,13 +6,13 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 14:23:40 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/01 15:43:16 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:48:33 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string name, int s, int e) : _name(name), _slevel(s), _elevel(e) 
+Form::Form(std::string name, int s, int e) : _name(name), _signed(0), _slevel(s), _elevel(e)
 {
 	if (_elevel < 1 || _slevel < 1)
 		throw GradeTooHighException();
@@ -54,14 +54,14 @@ Form::GradeTooHighException::GradeTooHighException() throw() {}
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high (max = 1)\n");
+	return ("Grade is too high to process action");
 }
 
 Form::GradeTooLowException::GradeTooLowException() throw() {}
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low (min = 150)\n");
+	return ("Grade is too low to process action");
 }
 
 std::ostream& operator<<(std::ostream& os, const Form &c)

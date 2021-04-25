@@ -6,44 +6,50 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:58 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/31 16:44:04 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:50:19 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 int main()
 {
-	Bureaucrat b("Enzo", 2);
-	std::cout << b << std::endl;
+	Bureaucrat a("Enzo", 4);
+	std::cout << a << std::endl;
 	try 
 	{
-		b.incrementGrade();
-		// b.incrementGrade();
+		a.incrementGrade();
+		a.incrementGrade();
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	Bureaucrat c("John", 149);
+	std::cout << a << std::endl;
+	Bureaucrat c("John", 148);
+	std::cout << c << std::endl;
 	try 
 	{
 		c.decrementGrade();
-		// c.decrementGrade();
+		c.decrementGrade();
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
-	try 
+	std::cout << c << std::endl;
+	Form f("Construction permit", 10, 5);
+	std::cout << f << std::endl;
+	try
 	{
-		Bureaucrat z("Enzo", 500);
+		f.getSigned(c);	
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
+	
+	c.signForm(f);
+	a.signForm(f);
 	return 0;
 }
