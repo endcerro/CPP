@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:16 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/01 15:34:29 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:38:56 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Bureaucrat.hpp"
@@ -18,6 +18,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 	if (grade > 150)
 		throw GradeTooLowException();
 	_grade = grade;
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &b) : _name(b._name), _grade(b._grade)
+{}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &b)
+{
+	_grade = b._grade;
+	return *this;
 }
 
 Bureaucrat::~Bureaucrat() {}
@@ -44,7 +53,6 @@ int Bureaucrat::getGrade(void) const
 	return _grade;
 }
 
-
 const std::string Bureaucrat::getName() const
 {
 	return _name;
@@ -54,14 +62,14 @@ Bureaucrat::GradeTooHighException::GradeTooHighException() throw() {}
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high (max = 1)\n");
+	return ("Grade is too high (max = 1) to increment\n");
 }
 
 Bureaucrat::GradeTooLowException::GradeTooLowException() throw() {}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low (min = 150)\n");
+	return ("Grade is too low (min = 150) to decrement\n");
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat &c)

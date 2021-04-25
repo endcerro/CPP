@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:16 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/03/31 16:39:25 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:14:36 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef BREAUCRAT_HPP
@@ -16,10 +16,16 @@
 #include <string>
 #include <exception>
 
+//COPILEN OK
+
 class Bureaucrat {
 	
 	public:
 		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat &b);
+		Bureaucrat& operator=(const Bureaucrat &b);
+
+
 		~Bureaucrat();
 		const std::string getName() const;
 		int getGrade() const;

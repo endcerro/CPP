@@ -6,46 +6,49 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:58 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/01 14:26:05 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:38:27 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+// #include "Form.hpp"
 
 
 int main()
 {
-	Bureaucrat b("Enzo", 2);
-	std::cout << b << std::endl;
+	Bureaucrat a("Enzo", 4);
+	std::cout << a << std::endl;
 	try 
 	{
-		b.incrementGrade();
-		// b.incrementGrade();
+		a.incrementGrade();
+		a.incrementGrade();
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	Bureaucrat c("John", 149);
+	std::cout << a << std::endl;
+	Bureaucrat c("John", 148);
+	std::cout << c << std::endl;
 	try 
 	{
 		c.decrementGrade();
-		// c.decrementGrade();
+		c.decrementGrade();
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
+	std::cout << c << std::endl;
 	try 
 	{
-		Bureaucrat z("Enzo", 500);
+		c.decrementGrade();
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << c << std::endl;
 
 	return 0;
 }
