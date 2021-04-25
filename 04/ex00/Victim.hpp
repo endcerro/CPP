@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:15:12 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/23 15:39:49 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 15:54:44 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef VICTIM_HPP
@@ -14,6 +14,7 @@
 
 #include <iostream>
 
+//COPILEN OK
 
 class Victim
 {
@@ -22,6 +23,7 @@ class Victim
 		Victim(const Victim &v);
 		Victim& operator=(const Victim &v);
 		~Victim();
+		
 		const std::string getName() const;
 		void getPolymorphed() const;
 	private :

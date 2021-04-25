@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:19:14 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/23 15:41:39 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 15:56:26 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SORCERER_HPP
@@ -14,6 +14,8 @@
 
 #include "Victim.hpp"
 #include "Peon.hpp"
+
+//COPILEN OK
 
 class Sorcerer
 {
