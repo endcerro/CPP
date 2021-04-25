@@ -6,31 +6,33 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:59:22 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/02 16:57:27 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 18:16:49 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
-Form("ShrubberyCreationForm", 145, 137), _tgt(target)
-{}
+Form("ShrubberyCreationForm", 145, 137)
+{
+	setTarget(target);
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 
 void ShrubberyCreationForm::execute(Bureaucrat const &b) const
 {
-	try 
-	{
+	// try 
+	// {
 		Form::execute(b);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what();
-		return;
-	}
+	// }
+	// catch (std::exception &e)
+	// {
+	// 	std::cout << e.what();
+	// 	return;
+	// }
 	std::ofstream file;
-	file.open(_tgt + "_shruberry");
+	file.open(getTarget() + "_shruberry");
 	file << "       /\\" << std::endl;
 	file << "      /\\*\\" << std::endl;
 	file << "     /\\O\\*\\" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 14:23:40 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/02 16:58:41 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 18:11:37 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ Form::Form(std::string name, int s, int e) : _name(name), _signed(0), _slevel(s)
 		throw GradeTooLowException();
 }
 
+Form::Form(const Form &f) : _name(f._name), _signed(f._signed), _slevel(f._elevel), _elevel(f._elevel)
+{}
+
+Form& Form::operator=(const Form &f)
+{
+	_name = f._name;
+	_signed = f._signed;
+	return *this;
+}
+
 Form::~Form() {}
 
 void Form::getSigned(Bureaucrat &b)
@@ -29,11 +39,16 @@ void Form::getSigned(Bureaucrat &b)
 	else
 		throw GradeTooLowException();
 	b.signForm(*this);
-}	
+}
 
-bool Form::isSigned(void) const
+void Form::setTarget(std::string target)
 {
-	return _signed;
+	_target = target;
+}
+
+const std::string Form::getTarget(void) const
+{
+	return _target;
 }
 
 void Form::execute(Bureaucrat const &e) const
@@ -42,6 +57,11 @@ void Form::execute(Bureaucrat const &e) const
 		throw NotSignedException();
 	if (_elevel < e.getGrade())
 		throw GradeTooLowException();
+}
+
+bool Form::isSigned(void) const
+{
+	return _signed;
 }
 
 std::string Form::getName(void) const
@@ -62,23 +82,21 @@ Form::GradeTooHighException::GradeTooHighException() throw() {}
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high (max = 1)\n");
+	return ("Grade is too high to process action");
 }
 
 Form::GradeTooLowException::GradeTooLowException() throw() {}
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low (min = 150)\n");
+	return ("Grade is too low to process action");
 }
-
 Form::NotSignedException::NotSignedException() throw() {}
 
 const char* Form::NotSignedException::what() const throw()
 {
 	return ("The contract hasn't been signed yet\n");
 }
-
 
 std::ostream& operator<<(std::ostream& os, const Form &c)
 {
