@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 15:17:09 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/04 14:22:36 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/26 16:29:04 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+
 #include <limits>
 
 class Converter {
@@ -24,19 +25,18 @@ class Converter {
 		Converter(std::string av);
 		~Converter() {}
 		bool isInt();
+		bool flatConvert();
 		bool isFloat();
 		bool isDouble();
 		bool isChar();
 		void print();
 	private :
-	const std::string _in;
-	
+
+	const std::string _in;	
 	std::stringstream _sint;
 	std::stringstream _sfloat;
 	std::stringstream _schar;
 	std::stringstream _sdouble;
-
-	int _ok;
 };
 
 #endif
