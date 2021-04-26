@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:09 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/26 14:41:07 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:46:45 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Intern {
 
 	public:
 		Intern();
+		Intern(const Intern &i);
+		Intern& operator=(const Intern &i);
 		~Intern();
 		Form*	makeForm(std::string form, std::string target) const;
 	private :

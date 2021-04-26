@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:09 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/26 14:44:01 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:47:57 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Intern.hpp"
@@ -41,5 +41,16 @@ Form* Intern::makeForm(std::string f, std::string t) const
 }
 
 Intern::Intern() {}
+
+Intern& Intern::operator=(const Intern &i) 
+{
+	(void)i._lforms;
+	return *this;
+}
+
+Intern::Intern(const Intern &i) 
+{
+	(void)i._lforms;
+}
 
 Intern::~Intern() {}
