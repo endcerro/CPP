@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 #include "Form.hpp"
 
 class ShrubberyCreationForm : public Form {

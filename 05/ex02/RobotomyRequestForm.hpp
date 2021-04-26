@@ -13,6 +13,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "Form.hpp"
+#include <cstdlib>
 
 class RobotomyRequestForm : public Form {
 	public:

@@ -22,17 +22,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(Bureaucrat const &b) const
 {
-	// try 
-	// {
-		Form::execute(b);
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cout << e.what();
-	// 	return;
-	// }
+	Form::execute(b);
 	std::ofstream file;
-	file.open(getTarget() + "_shruberry");
+	std::string tmp = getTarget() + "_shruberry";
+	file.open(tmp.c_str());
 	file << "       /\\" << std::endl;
 	file << "      /\\*\\" << std::endl;
 	file << "     /\\O\\*\\" << std::endl;
