@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 14:23:40 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/02 16:45:53 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:43:40 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ class Form {
 	
 	public:
 		Form(std::string name, int s, int e);
-		~Form();
-		
+		Form(const Form &f);
+		Form& operator=(const Form &f);
+		virtual ~Form();
+		void setTarget(std::string target);
+		const std::string getTarget(void) const;
+		 
 		class GradeTooHighException : public std::exception
 		{
 			public :
@@ -38,7 +42,6 @@ class Form {
 			GradeTooLowException() throw();
 			virtual const char* what() const throw();
 		};
-		
 		class NotSignedException : public std::exception 
 		{
 			public :
@@ -46,14 +49,16 @@ class Form {
 			virtual const char* what() const throw();
 		};
 		std::string getName(void) const;
-		virtual void execute(Bureaucrat const &executor) const;
+
 		int 	getELevel(void) const;
 		int 	getSLevel(void) const;
 		bool 	isSigned(void) const;
 		void 	getSigned(Bureaucrat &b);
+		virtual void execute(Bureaucrat const &executor) const;
 		
 
 	private :
+		std::string _target;
 		std::string _name;
 		bool 		_signed;
 		const int	_slevel;

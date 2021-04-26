@@ -6,40 +6,36 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:09 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/02 17:26:26 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:44:01 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Intern.hpp"
 
-std::string Intern::_lforms[3] = 
+std::string Intern::_lforms[6] = 
 {
 	"PresidentialPardonForm",
 	"RobotomyRequestForm", 
-	"ShrubberyCreationForm"
+	"ShrubberyCreationForm",
+	"Presidential pardon",
+	"Robotomy request", 
+	"Shrubbery creation"
 };
-
-// void Intern::*_funs[3] = 
-// {
-// 	&(PresidentialPardonForm()),
-// 	&(RobotomyRequestForm()), 
-// 	&(ShrubberyCreationForm());
-// };
 
 Form* Intern::makeForm(std::string f, std::string t) const
 {
 	int fun = -1;
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 6; i++)
 	{
-		if (t == _lforms[i])
+		if (f.compare(_lforms[i]) == 0)
 			fun = i;
 	}
 	if (fun != -1)
 		std::cout << "Intern creates " << f << std::endl;
-	if (fun == 0)
+	if (fun == 0 || fun == 3)
 		return new PresidentialPardonForm(t);
-	else if (fun == 1)
+	else if (fun == 1 || fun == 4)
 		return new RobotomyRequestForm(t);
-	else if (fun == 2)
+	else if (fun == 2 || fun == 5)
 		return new ShrubberyCreationForm(t);
 	return (0);
 }
