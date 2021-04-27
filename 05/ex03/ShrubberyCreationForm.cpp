@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:59:22 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/25 18:16:49 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:15:06 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ShrubberyCreationForm.hpp"
@@ -16,6 +16,8 @@ Form("ShrubberyCreationForm", 145, 137)
 {
 	setTarget(target);
 }
+
+ShrubberyCreationForm::ShrubberyCreationForm() {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 

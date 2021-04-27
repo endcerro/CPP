@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 14:23:40 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/25 17:51:45 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:11:42 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ class Form {
 		
 
 	private :
+		Form();
 		std::string _name;
 		bool 		_signed;
 		const int	_slevel;

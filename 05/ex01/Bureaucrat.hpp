@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:16 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/25 17:42:43 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:11:24 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef BREAUCRAT_HPP
@@ -53,6 +53,7 @@ class Bureaucrat {
 
 
 	private :
+		Bureaucrat();
 		const std::string 	_name;
 		int 				_grade;
 };
