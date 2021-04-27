@@ -6,19 +6,34 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/26 16:28:35 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:48:55 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
 
 
-Converter::Converter(std::string av) : _in(av), _ok(0)
+Converter::Converter(std::string av) : _in(av)
 {}
+
+Converter::Converter(const Converter &c) : _in(c._in), _sint(c._sint.str()), _sfloat(c._sfloat.str()),
+_schar(c._schar.str()), _sdouble(c._sdouble.str())
+{}
+
+Converter& Converter::operator=(const Converter &c)
+{
+	_sint.str(c._sint.str());
+	_sfloat.str(c._sfloat.str());
+	_schar.str(c._schar.str());
+	_sdouble.str(c._sdouble.str());
+	// _sint << (c._sint.str());
+	// _sfloat << (c._sfloat.str());
+	// _schar << (c._sfloat.str());
+	// _sdouble << (c._sdouble.str());
+	return *this;
+}
 
 void Converter::print()
 {
-	// if (!_ok)
-	// 	return;
 	std::cout << "char : " << _schar.str() << std::endl;
 	std::cout << "int : " << _sint.str() <<std::endl;
 	std::cout << "float : " << _sfloat.str() << std::endl;
@@ -59,10 +74,7 @@ bool Converter::flatConvert()
 		int t = stoi(nin);
 		_sint << t;
 		if (t >= 32 && t <= 126)
-		{
-			std::cout << "Here" << std::endl;
 			_schar << (static_cast<char> (t));
-		}
 		else
 			_schar << "Non displayable";
 	}
@@ -71,6 +83,6 @@ bool Converter::flatConvert()
 		_sint << "Non displayable";
 		_schar << "Non displayable";
 	}
-	// _ok = 1;
 	return 0;
 }
+
