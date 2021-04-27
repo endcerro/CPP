@@ -6,12 +6,10 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:16:16 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/27 16:14:07 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/25 18:19:01 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Bureaucrat.hpp"
-
-Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {

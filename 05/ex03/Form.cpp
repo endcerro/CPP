@@ -6,13 +6,11 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 14:23:40 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/27 16:14:14 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:43:02 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-
-Form::Form() {}
 
 Form::Form(std::string name, int s, int e) : _name(name), _signed(0), _slevel(s), _elevel(e)
 {

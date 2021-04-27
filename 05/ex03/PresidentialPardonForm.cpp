@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:15:21 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/27 16:15:30 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:25:52 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "PresidentialPardonForm.hpp"
@@ -17,8 +17,6 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presi
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
-
-PresidentialPardonForm::PresidentialPardonForm() {}
 
 void PresidentialPardonForm::execute(Bureaucrat const &b) const
 {

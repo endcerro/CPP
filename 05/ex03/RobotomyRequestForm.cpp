@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:02:37 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/27 16:15:01 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:26:00 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
 {
 	setTarget(target);
 }
-RobotomyRequestForm::RobotomyRequestForm() {}
 
 void RobotomyRequestForm::execute(Bureaucrat const &b) const
 {
-	srand(time(0));
+	srand(time(0));	
 	Form::execute(b);
 	std::cout << "* DRILL NOISES *" << std::endl;
 	std::cout << "SKU SKU" << std::endl;
