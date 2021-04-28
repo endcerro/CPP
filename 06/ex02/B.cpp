@@ -6,11 +6,19 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 13:48:00 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 13:48:52 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/28 14:22:22 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "B.hpp"
 
 B::B() {}
+
+B::B(const B &b) : Base(b) {}
+
+B& B::operator=(const B &b) 
+{
+	(void) b;
+	return *this;
+}
 
 B::~B() {}

@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/28 14:09:51 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/28 14:19:47 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
@@ -21,6 +21,7 @@ _schar(c._schar.str()), _sdouble(c._sdouble.str())
 
 Converter& Converter::operator=(const Converter &c)
 {
+	_in = c._in;
 	_sint.str(c._sint.str());
 	_sfloat.str(c._sfloat.str());
 	_schar.str(c._schar.str());

@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 17:16:17 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 13:50:45 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/28 14:24:15 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 
 Base *generate(void)
 {
-	Base *base;
 	switch (rand() % 3)
 	{
 		case 0:
@@ -33,8 +32,6 @@ Base *generate(void)
 		case 2:
 			std::cout << "Generated C" << std::endl;
 			return (new C);
-		default :
-			std::cout << "Eh" << std::endl;
 	}
 	return 0;
 }
@@ -59,18 +56,21 @@ void identify_from_reference(Base & p)
 	{
 		A &a = dynamic_cast<A&>(p);
 		std::cout << "A type reference"<< std::endl;
+		(void) a;
 	}
 	catch (std::exception &e){	}
 	try
 	{
 		B &b = dynamic_cast<B&>(p);
 		std::cout << "B type reference"<< std::endl;
+		(void) b;
 	}
 	catch (std::exception &e){	}
 	try
 	{
 		C &c = dynamic_cast<C&>(p);
 		std::cout << "C type reference"<< std::endl;
+		(void) c;
 	}
 	catch (std::exception &e){	}
 
