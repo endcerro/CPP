@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:28:54 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/28 14:10:45 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/28 16:36:19 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int main(int ac, char **av)
 	}
 	std::string tmp(av[1]);
 	Converter c(tmp);
-	c.flatConvert();
-	c.print();	
+	if (c.flatConvert() == 0)
+		c.print();	
+	else
+		std::cout << "Insupported input" << std::endl;
 	/*int t = 120;
 	double d = 250.25;
 	float f = 850.42f;
