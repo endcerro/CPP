@@ -16,7 +16,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
-
+#include <stdlib.h>
 #include <limits>
 
 class Converter {
@@ -30,6 +30,10 @@ class Converter {
 		void print();
 		bool in_list(std::string s);
 	private :
+		int _int;
+		char _char;
+		float _float;
+		double _double;
 		std::string _in;	
 		std::stringstream _sint;
 		std::stringstream _sfloat;

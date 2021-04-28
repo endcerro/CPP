@@ -31,10 +31,10 @@ Converter& Converter::operator=(const Converter &c)
 
 void Converter::print()
 {
-	std::cout << "char : " << _schar.str() << std::endl;
-	std::cout << "int : " << _sint.str() <<std::endl;
-	std::cout << "float : " << _sfloat.str() << std::endl;
-	std::cout << "double : " << _sdouble.str() <<std::endl;
+	std::cout << "char : " << _char << std::endl;
+	std::cout << "int : " << _int <<std::endl;
+	std::cout << "float : " << _float << "f" << std::endl;
+	std::cout << "double : " << _double <<std::endl;
 }
 
 bool Converter::in_list(std::string s)
@@ -71,54 +71,12 @@ bool Converter::in_list(std::string s)
 
 bool Converter::flatConvert()
 {
-	int cdone = 0;
-	std::string nin;
-	if (in_list(_in))
-		return 0;
-	if ((_in[0] > 31 && _in[0] < 48) || (_in[0] > 57 && _in[0] < 127) )
-	{
-		_schar << _in[0];
-		int t = static_cast<int> (_in[0]); 
-		nin += std::to_string(t);
-		cdone = 1;
-	}
-	else
-		nin =_in;
-	try 
-	{
-		double t = stod(nin);
-		_sdouble << std::fixed << t;
-	}
-	catch(std::exception &e)
-	{
-		_sdouble << "Impossible";
-	}
-	try 
-	{
-		float t = stof(nin);
-		_sfloat << std::fixed << t << "f";	
-	}
-	catch(std::exception &e)
-	{
-		_sfloat << "Impossible";
-	}
-	try 
-	{
-		int t = stoi(nin);
-		_sint << t;
-		if (!cdone)
-		{
-			if (t >= 32 && t <= 126)
-				_schar << (static_cast<char> (t));
-			else
-				_schar << "Non displayable";	
-		}		
-	}
-	catch(std::exception &e)
-	{
-		_sint << "Non displayable";
-		_schar << "Non displayable";
-	}
+	double d = atof(_in.c_str());
+	std::cout << d << std::endl;
+	_double = d;
+	_float = static_cast<float> (d);
+	_int = static_cast<int> (d);
+	_char = static_cast<char> (d);
 	return 0;
 }
 

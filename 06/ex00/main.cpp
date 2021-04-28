@@ -26,5 +26,9 @@ int main(int ac, char **av)
 	Converter c(tmp);
 	c.flatConvert();
 	c.print();	
+	/*int t = 120;
+	double d = 250.25;
+	float f = 850.42f;
+	std::cout << t << " " << d << " " << f << std::endl;*/
 	return (0);
 }
