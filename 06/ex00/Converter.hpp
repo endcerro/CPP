@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 15:17:09 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/27 16:34:08 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/28 14:05:45 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ class Converter {
 		~Converter() {}
 		bool flatConvert();
 		void print();
+		bool in_list(std::string s);
 	private :
-		const std::string _in;	
+		std::string _in;	
 		std::stringstream _sint;
 		std::stringstream _sfloat;
 		std::stringstream _schar;

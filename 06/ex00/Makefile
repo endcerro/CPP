@@ -1,4 +1,4 @@
-NAME = converter
+NAME = convert
 
 all : 
 	clang++ *.cpp -Wall -Werror -Wextra -std=c++98 -o $(NAME)
