@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/28 16:36:44 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/28 17:06:37 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
@@ -54,7 +54,12 @@ void Converter::print()
 	
 	std::cout << "float : ";
 	if (_conv[2] != 0)
-		std::cout << _float << "f" <<std::endl;
+	{
+		std::cout << std::fixed <<_float;
+		if (_int == _float)
+			std::cout << ".0";
+		std::cout << "f" <<std::endl;
+	}
 	else
 		std::cout << "Impossible" << std::endl;
 
@@ -65,39 +70,17 @@ void Converter::print()
 		std::cout << "Impossible" << std::endl;
 }
 
-// bool Converter::in_list(std::string s)
-// {
-// 	// std::cout << "|" << s << "|" << std::endl;
-// 	// if (s.compare("+inff") == 0 || s.compare("+inf") == 0)
-// 	// {
-// 	// 	_schar << "Impossible";
-// 	// 	_sint << "Impossible";
-// 	// 	_sfloat << "inff";
-// 	// 	_sdouble << "inf";
-// 	// 	return 1;
-// 	// }
-// 	// else if (s.compare("-inff") == 0 || s.compare("-inf") == 0)
-// 	// {
-// 	// 	_schar << "Impossible";
-// 	// 	_sint << "Impossible";
-// 	// 	_sfloat << "-inff";
-// 	// 	_sdouble << "-inf";
-// 	// 	return 1;
-// 	// }
-// 	// else if (s.compare("nanf") == 0 || s.compare("nan") == 0)
-// 	// {
-// 	// 	_schar << "Impossible";
-// 	// 	_sint << "Impossible";
-// 	// 	_sfloat << "nanf";
-// 	// 	_sdouble << "nan";
-
-// 	// 	return 1; 
-// 	// }
-// 	return 0;
-// }
+bool specialNb(std::string s)
+{
+	if ( s == "nanf" || s == "nan")
+		return 1;
+	return 0;
+}
 
 int isChar(std::string s)
 {
+	if (specialNb(s))
+		return 0;
 	if ((s[0] > 32 && s[0] < 48) ||(s[0] > 57 && s[0] < 127))
 	{
 		if ((s[0] == '+' || s[0] == '-') &&  (s[1] > 47 && s[1] < 58))
@@ -122,11 +105,9 @@ bool Converter::flatConvert()
 		_conv[0] = 1;
 	}
 	else if (t == -1)
-	{
 		return 1;
-	}
-	double d = atof(_in.c_str());	
-	
+
+	double d = atof(_in.c_str());
 	_double = d;
 	_conv[3] = 1;
 	_float = static_cast<float> (d);
