@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/28 17:06:37 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/29 15:53:36 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
@@ -39,19 +39,16 @@ Converter& Converter::operator=(const Converter &c)
 
 void Converter::print()
 {
-
 	std::cout << "char : " ;
 	if (_conv[1] != 0)
 		std::cout <<"\'" <<_char << "\'" << std::endl;
 	else
 		std::cout << "Impossible" << std::endl;
-	
 	std::cout << "int : ";
 	if (_conv[0] != 0)
 		std::cout << _int << std::endl;
 	else
-		std::cout << "Impossible" << std::endl;
-	
+		std::cout << "Impossible" << std::endl;	
 	std::cout << "float : ";
 	if (_conv[2] != 0)
 	{
@@ -70,14 +67,21 @@ void Converter::print()
 		std::cout << "Impossible" << std::endl;
 }
 
-bool specialNb(std::string s)
+int specialNb(std::string &s)
 {
 	if ( s == "nanf" || s == "nan")
 		return 1;
+	else if ( s == "-inff" || s == "-inf")
+		return 1;
+	else if ( s == "+inff" || s == "inff"|| s == "+ inff" || s == "inf" || s == "+ inf" || s == "+inf")
+	{
+		s = "inf";
+		return 1;
+	}
 	return 0;
 }
 
-int isChar(std::string s)
+int isChar(std::string &s)
 {
 	if (specialNb(s))
 		return 0;
@@ -87,7 +91,6 @@ int isChar(std::string s)
 			return 0;
 		else if (s[1] != 0)
 			return -1; 
-		std::cout << "We found a char " << s[0] << std::endl;
 		return 1;
 	}
 	return 0;
@@ -113,8 +116,7 @@ bool Converter::flatConvert()
 	_float = static_cast<float> (d);
 	_conv[2] = 1;
 	_conv[0] = 1;
-	if (_double > std::numeric_limits<int>::max() ||
-	 _double < std::numeric_limits<int>::min())
+	if (_double > std::numeric_limits<int>::max() || _double < std::numeric_limits<int>::min() || isinf(d) || isnan(d))
 		_conv[0] = 0;
 	else
 		_int = static_cast<int> (d);

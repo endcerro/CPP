@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 15:17:09 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/28 16:05:41 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/29 15:42:01 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits>
+#include <cmath>
 
 class Converter {
 	
