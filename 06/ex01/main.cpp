@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:52:46 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/13 17:15:27 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/29 15:57:46 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void *serialize(void)
 		charv[i] = c;
 	}
 	std::cout << std::endl;
-	intv[2] = 420;
+	intv[2] = rand();
 	std::cout << "Int is : " << intv[2] <<std::endl;
 	std::cout << "S2 build : ";
 	for (int i = 12; i < 20; i++)
@@ -74,6 +74,7 @@ int main()
 {
 	void *raw = serialize();
 	Data *d = deserialize(raw);
+	std::cout << "Decoded : " << std::endl;
 	std::cout << "S1 = " << d->s1 << " int = " << d->n << " S2= " << d->s2 << std::endl;
 	delete static_cast<char *>(raw);
 	delete d;
