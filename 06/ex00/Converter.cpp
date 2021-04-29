@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/29 15:53:36 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/29 15:54:37 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
@@ -109,7 +109,6 @@ bool Converter::flatConvert()
 	}
 	else if (t == -1)
 		return 1;
-
 	double d = atof(_in.c_str());
 	_double = d;
 	_conv[3] = 1;
@@ -120,8 +119,6 @@ bool Converter::flatConvert()
 		_conv[0] = 0;
 	else
 		_int = static_cast<int> (d);
-
-
 	if (_int > 31 && _int < 127)
 	{
 		_char = static_cast<char> (d);
