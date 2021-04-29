@@ -16,7 +16,6 @@
 #include "C.hpp"
 
 #include <time.h>
-#include <random>
 #include <iostream>
 
 Base *generate(void)
