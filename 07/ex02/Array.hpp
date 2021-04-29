@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 18:18:45 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 15:25:39 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/04/29 16:32:23 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,11 @@ class Array {
 		}
 		Array& operator=(Array<T> a)
 		{
-			T *tmp = a._array;
-			a._array = this->_array;
-			this->_array = tmp;
+			delete _array;
+			_array = new T[a._size];
 			this->_size = a._size;
+			for (int i = 0; i < _size; i++)
+				_array[i] = a._array[i];
 			return *this;
 		}
 		T& operator[](int p)
@@ -65,6 +66,15 @@ class Array {
 				std::cout << _array[i] << " ";
 			std::cout << std::endl;
 		}
+		class OutOfBoundsException : public std::exception 
+		{
+			public :
+			OutOfBoundsException() throw();
+			virtual const char* what() const throw()
+			{
+				return ("This index isn't available");
+			}
+		};
 	private :
 		int _size;
 		T *_array;
