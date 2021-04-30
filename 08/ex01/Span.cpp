@@ -3,78 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:17:22 by edal              #+#    #+#             */
-/*   Updated: 2021/04/17 18:04:44 by edal             ###   ########.fr       */
+/*   Updated: 2021/04/30 14:02:58 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(const unsigned int &s) : _s(0), _c(s) 
-{
-	_arr = new int[s];
-	for (unsigned int i = 0; i < s; i++)
-		_arr[i] = 0;
-}
+Span::Span(const unsigned int &s) : _s(0), _ms(s) 
+{}
 
 Span::~Span() 
-{
-	delete _arr;
-}
+{}
 
 void Span::addNumber(int n)
 {
-	if (_s + 1 <= _c)
-		_arr[_s++] = n;
+	if (_s < _ms)
+	{
+		_v.push_back(n);
+		_s++;
+	}
 	else
 		throw (MaxCapacity());
 }
 
-int Span::longestSpan(void) const // check with neg values
+int gen()
 {
-	int max;
-	int min;
+    static int i = 0;
+    return ++i;
+}
 
-	if (_s < 2)
-		throw (NoMembers());
-	min = max = _arr[0];
-
-	for (unsigned int i = 0; i < _s; i++)
+void Span::easyFill(unsigned int size)
+{
+	if (size > _ms)
+		throw (MaxCapacity());
+	else if (size > _s)
 	{
-		if (_arr[i] < min)
-			min = _arr[i];
-		else if (_arr[i] > max)
-			max = _arr[i];
+		_v.resize(size);
+		_s = size;
 	}
-	return (max - min);
+	std::generate_n(_v.begin(), size, gen);
 }
 
-unsigned int dist(int a, int b)
+int Span::longestSpan(void) const
 {
-	if (a < 0 && b > 0)
-		return (b - a);
-	else if (a > 0 && b < 0)
-		return(a - b);
-	else if (a < 0 && b < 0)
-		return(-a - b);
-	else if ( a < b)
-		return(b - a);
-	else
-		return(a - b);
+	int max = *std::max_element(_v.begin(), _v.end());
+	int min = *std::min_element(_v.begin(), _v.end());
+	return (std::abs(max - min));
 }
 
-
-int Span::shortestSpan(void) const // check with neg values
+int Span::shortestSpan(void) const
 {
-	if (_s < 2)
-		throw (NoMembers());
-	unsigned int delta = dist(_arr[0], _arr[1]);
-	for (unsigned int i = 0; i < _s; i++)
-		for (unsigned int j = 0; j < _s; j++)
-			if (i != j && (dist(_arr[i], _arr[j]) < delta))
-				delta = dist(_arr[i], _arr[j]);
+	std::vector<int> v = _v;
+	std::vector<int>::iterator it;
+	std::sort(v.begin(), v.end());
+	int delta = -1;
+
+	for (it = v.begin(); it != v.end() - 1; ++it) 
+		if ( std::abs(*it - *(it + 1)) < delta || delta == -1)
+			delta = std::abs(*(it + 1) - *it);
 	return (delta);
 }
 

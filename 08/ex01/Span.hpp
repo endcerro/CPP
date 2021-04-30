@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:17:22 by edal              #+#    #+#             */
-/*   Updated: 2021/04/17 17:51:49 by edal             ###   ########.fr       */
+/*   Updated: 2021/04/30 13:50:29 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <exception>
+#include <vector>
+#include <cstdlib>
 
 class Span {
 public:
@@ -24,6 +26,7 @@ public:
 		void addNumber(int n);
 		int longestSpan(void) const;
 		int shortestSpan(void) const;
+		void easyFill(unsigned int s);
 		class MaxCapacity : public std::exception
 		{
 			public :
@@ -37,9 +40,9 @@ public:
 			virtual const char* what() const throw();
 		};
 	private :
-		int 				*_arr;
+		std::vector<int> 	_v;
 		unsigned int 		_s;
-		const unsigned int 	_c;
+		unsigned int 		_ms;
 };
 
 #endif
