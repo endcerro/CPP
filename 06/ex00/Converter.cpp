@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:53:31 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/29 15:54:37 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/05/04 13:44:43 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Converter.hpp"
@@ -42,8 +42,14 @@ void Converter::print()
 	std::cout << "char : " ;
 	if (_conv[1] != 0)
 		std::cout <<"\'" <<_char << "\'" << std::endl;
-	else
+	else if (_conv[0] != 0 && (_int <= 31 || _int >= 127) && _int > 0 && _int < 127)
+	{
+		std::cout << "Non displayable" << std::endl;	
+	}
+	else 
+	{
 		std::cout << "Impossible" << std::endl;
+	}
 	std::cout << "int : ";
 	if (_conv[0] != 0)
 		std::cout << _int << std::endl;
