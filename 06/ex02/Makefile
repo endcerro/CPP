@@ -1,7 +1,5 @@
-NAME = convert
-
 all : 
-	clang++ Converter.cpp main.cpp -Wall -Werror -Wextra -std=c++98 -o $(NAME)
+	clang++ A.cpp B.cpp C.cpp main.cpp -Wall -Werror -Wextra -std=c++98
 
 clean : 
 	rm -rf $(NAME)

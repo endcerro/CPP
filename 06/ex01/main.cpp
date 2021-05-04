@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:52:46 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/29 15:57:46 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/05/04 13:26:36 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ struct Data { std::string s1; int n; std::string s2; };
 
 char randchar()
 {
-	std::string test = "abcdefghijlmnopqrstuvwxyz";
+	std::string test = "abcdefghijklmnopqrstuvwxyz12345667890";
 	char t = test[rand() % 26];
 	return t;
 }
