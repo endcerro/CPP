@@ -1,5 +1,5 @@
 all : 
-	clang++ A.cpp B.cpp C.cpp main.cpp -Wall -Werror -Wextra -std=c++98
+	clang++ Base.cpp A.cpp B.cpp C.cpp main.cpp -Wall -Werror -Wextra -std=c++98
 
 clean : 
 	rm -rf $(NAME)
