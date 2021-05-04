@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 18:18:20 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/29 16:33:24 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/05/04 17:34:10 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main()
 	ar2.print();
 	try
 	{
-		std::cout << ar2[120] << std::endl;
+		std::cout << ar2[6] << std::endl;
 	}
 	catch (std::exception &e)
 	{

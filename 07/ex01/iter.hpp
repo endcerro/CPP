@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 18:01:06 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/14 15:58:00 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/05/04 17:29:00 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <iostream>
 
 template<typename T, typename F>
-void iter(T arr[], int s, F fun)
+void iter(T arr[],unsigned int s, F fun)
 {
 	std::cout << "Iter call" << std::endl;
-	for (int i = 0; i < s; i++)
+	for (unsigned int i = 0; i < s; i++)
 	{
 		fun(arr[i]);
 	}

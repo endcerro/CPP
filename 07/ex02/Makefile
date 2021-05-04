@@ -1,12 +1,11 @@
+NAME  = a.out
+
 all : 
-	clang++ *.cpp -Wall -Werror -Wextra -std=c++98
+	clang++ main.cpp -Wall -Werror -Wextra -std=c++98 -o $(NAME)
 
 clean : 
 	rm -rf $(NAME)
 
-fclean : clean
-	rm -rf $(OBJD)
+re : clean all
 
-re : fclean all
-
-.PHONY		:	all clean re fclean	
+.PHONY		:	all clean re
