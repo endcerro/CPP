@@ -1,5 +1,5 @@
 all : 
-	clang++ main.cpp -Wall -Werror -Wextra -std=c++98 -o $(NAME)
+	clang++ main.cpp -Wall -Werror -Wextra -std=c++98
 
 clean : 
 	rm -rf $(NAME)
