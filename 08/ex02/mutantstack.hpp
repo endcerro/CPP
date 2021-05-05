@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mutantstack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edal <edal@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 14:35:01 by edal--ce          #+#    #+#             */
-/*   Updated: 2021/04/30 16:06:09 by edal--ce         ###   ########.fr       */
+/*   Updated: 2021/05/05 15:42:32 by edal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class MutantStack : public std::stack<T>
 			return (*this);
 		};
 		typedef typename std::stack<T>::container_type::iterator iterator;
-		iterator begin() 
+		iterator begin()
 		{ 
 			return (std::stack<T>::c.begin()); 
 		}
